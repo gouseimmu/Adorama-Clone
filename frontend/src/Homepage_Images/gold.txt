@@ -1,0 +1,123 @@
+https://docs.google.com/document/d/12UIhur--jkEVLZI8fwMJtEMEYY6uswZ4hH2dOYAlZGs/edit
+
+
+1)Recursion 
+	a)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/8400/material/4e38d30e656da5ae9d3a425109ce9e04/zoom_0.mp4
+
+	b)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/8439/material/c480540d4e8c0cf7ad03ba949e3a5280/zoom_0.mp4
+
+	c)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/8480/material/5f7695debd8cde8db5abcb9f161b49ea/zoom_0.mp4
+
+	d)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/8558/material/a9cf46a38a9b05e959f33215e5cdc38a/zoom_0.mp4
+
+	e)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/8601/material/d2ab2b971ff0dc34b54c0eaa664873f0/zoom_0.mp4
+
+	f)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/8638/material/5c376f6d20024c7448dcc13bdf090086/zoom_0.mp4
+
+
+2)Merge sort and Quick Sort
+	a)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/8681/material/4dbf29d90d5780cab50897fb955e4373/zoom_0.mp4
+
+	b)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/8767/material/c3cbd51329ff1a0169174e9a78126ee1/zoom_0.mp4
+
+
+3)Backtracking
+	a)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/8802/material/4c92d46d3b1aad8a64eb35d7312d067c/zoom_0.mp4
+
+	b)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/8837/material/b97f138920c54acf5eb77d23bc318b12/zoom_0.mp4
+
+	c)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/8874/material/55063089b08df5797d3eebca7c087ed4/zoom_0.mp4
+
+
+4)Dynamic Programming [DP]
+	https://masai-course.s3.ap-south-1.amazonaws.com/material/videos/29765/FO7tLfEJiD9pkhESpoNCJ23vyt1NPj9rn0sD5oLJ.mp4
+
+https://masai-course.s3.ap-south-1.amazonaws.com/material/videos/29968/eGax1JaHt8Yqk8QDt6yhZHMvbgTzqSNH0RyAGBPk.mp4
+
+https://masai-course.s3.ap-south-1.amazonaws.com/material/videos/29839/0RP9F8oJd1hwtjnbJNS0837ecKM0m76LidTGthPS.mp4
+
+https://masai-course.s3.ap-south-1.amazonaws.com/material/videos/30225/qGpVGKpNf63PhmZE3lI8NJrlFuecjURyJIS17XG9.mp4
+
+https://masai-course.s3.ap-south-1.amazonaws.com/material/videos/30294/rkPn1LU66xsOkYFbwbY8pSIgUsKSUOx7abxjGDVw.mp4
+
+https://masai-course.s3.ap-south-1.amazonaws.com/material/videos/30364/flpO6wjHdOYug05McVKvZPG5IbtoFZCHiIAaQjma.mp4
+
+https://masai-course.s3.ap-south-1.amazonaws.com/material/videos/30457/G110farQ0pGcaJ3h6dcQltzpeq39Aba69g6AeW5n.mp4
+
+
+5)Linked List
+	a)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/7675/material/0660895c22f8a14eb039bfb9beb0778f/zoom_0.mp4
+
+	b)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/7719/material/48d4167a0f3bc10686a1ad20a8008c73/zoom_0.mp4
+
+	c)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/7815/material/430a27748f3853d3745bda9d32419fef/zoom_0.mp4
+
+
+6)Binary Search
+	a)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/10514/material/206bb45f944accb7a4cd1f135786c415/zoom_0.mp4
+
+	b)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/10630/material/547e254ad67a3f2b4cd98de28e663293/video1277549431.mp4
+
+	c)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/10647/material/31c49b512f199bc6f8734034a87dd9fa/video1871490225.mp4
+
+	
+7)Greedy
+	a)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/10753/material/761213bcd999998a5b22d22b13db075f/video1752581521.mp4
+
+	b)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/10775/material/b951782ef245e750f4bb131e66fb3825/video1732070038.mp4
+
+	c)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/10892/material/39375e8559373aede34f6f15b8dab4dc/video1275620492.mp4
+
+
+8)Sliding Window
+	https://masai-course.s3.ap-south-1.amazonaws.com/lecture/10146/material/f52a7b2610fb4d3f74b4106fb80b233d/zoom_0.mp4
+
+
+9)sub sequence
+	https://masai-course.s3.ap-south-1.amazonaws.com/lecture/10013/material/0023a1e3447fdb31836536cc903f1310/zoom_0.mp4
+
+
+10)two pointer technique
+	https://masai-course.s3.ap-south-1.amazonaws.com/lecture/6591/material/486fbd761bfa5400722324fdc9822adc/zoom_0.mp4
+
+
+11)Time and Space Complexity
+	a)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/7740/material/38ed4039c0b33e2ec51cc4579405d03e/zoom_0.mp4
+
+	b)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/7838/material/79121bb953a3bd47c076f20234bafd2e/zoom_0.mp4
+
+	c)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/7856/material/961f1e759d4e9cca6754b1477b3b491a/zoom_0.mp4
+
+	d)https://masai-course.s3.ap-south-1.amazonaws.com/lecture/7906/material/ad7bdcafbea74680e11d25162a145507/zoom_0.mp4
+
+12) Stack and Queue :-
+https://masai-course.s3.ap-south-1.amazonaws.com/material/videos/28192/vSr2CluWEmZRHxiv7kK1G3Ssf3zSYjLl1ai4ZjNN.mp4
+
+https://masai-course.s3.ap-south-1.amazonaws.com/material/videos/28332/Dnsp2td35PM2NpzxTVguAM6zznV5YHwvSQRgteqK.mp4
+
+
+
+
+
+12) Master classes
+
+Time and space complexity :- 
+https://masai-course.s3.ap-south-1.amazonaws.com/material/videos/29213/u3Byir94Z7n3z6FfiKVWUiF27buJ9uREf2QrNPEp.mp4
+
+
+
+Bit Manipulation
+https://masai-course.s3.ap-south-1.amazonaws.com/material/videos/30813/jKuHJrewidcM0nkk8lJWZARQLtQVunxFfHaY2Zdf.mp4
+
+
+
+Sliding Window and 2-pointer :- 
+https://masai-course.s3.ap-south-1.amazonaws.com/material/videos/34259/pgA0T2Mx5ScdiQpULOnWw5ZjhZT4E6VYNrg0Jx6T.mp4
+
+
+Linked List
+https://zoom-lecture-recordings.s3.ap-south-1.amazonaws.com/82389728418/dsa_master_class_1663991718000
+
+
+
+    
