@@ -1,0 +1,16 @@
+.Advertise_box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.Advertise_box>div{
+    width: 90%;
+    margin: auto;
+    height: 32rem;
+}
+
+.Advertise_box>div>p,.Advertise_box>div>a{
+    text-align: start;
+
+}
