@@ -8,7 +8,7 @@ import Payment from '../pages/Payment'
 import Signup from '../pages/Signup'
 import SingleProduct from '../pages/SingleProduct'
 import AdminDashboard from './AdminDashboard'
-
+import Product from "./product/Product"
 const MainRoutes = () => {
   return (
     <div>
@@ -23,6 +23,7 @@ const MainRoutes = () => {
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/payment' element={<Payment/>}/>
             <Route path="/admin" element={<AdminDashboard/>} />
+           <Route path='/product' element={<Product/>}/>
 
           
 
