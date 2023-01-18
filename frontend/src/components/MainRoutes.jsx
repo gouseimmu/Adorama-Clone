@@ -7,6 +7,7 @@ import Login from '../pages/Login'
 import Payment from '../pages/Payment'
 import Signup from '../pages/Signup'
 import SingleProduct from '../pages/SingleProduct'
+import AdminDashboard from './AdminDashboard'
 
 const MainRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const MainRoutes = () => {
             <Route path='/singleproduct' element={<SingleProduct/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/payment' element={<Payment/>}/>
+            <Route path="/admin" element={<AdminDashboard/>} />
 
           
 
