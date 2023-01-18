@@ -1,0 +1,11 @@
+
+.category_cerosel>.slick-slider>.slick-next:before{
+    color: black;
+   display: none;
+}
+.category_cerosel>.slick-slider>.slick-prev:before{
+    color: black;
+    display: none;
+   
+
+}
