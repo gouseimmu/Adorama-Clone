@@ -19,17 +19,17 @@ UserSignupRoute.post("/signup",async(req,res)=>{
                     let data=new SignupModel({firstname,lastname,email,password:secure_pass})
                     await data.save()
                     console.log(data)
-                    res.send("Registration Successfull")
+                    res.send({"msg":"Registration Successfull"})
                 }
             });
         } catch (error) {
             console.log(error)
-            res.send("Something went wrong")
+            res.send({"msg":"Something went wrong"})
         }
 
     }
     else{
-        res.send("Please enter same password")
+        res.send({"msg":"Please enter same password"})
     }
 })
 
@@ -73,7 +73,7 @@ UserSignupRoute.patch("/update",async(req,res)=>{
                 let data=await SignupModel.findByIdAndUpdate({_id:id},{password:secure_pass})
                 
                 console.log(data)
-                res.send("Password Updated Successfully")
+                res.send({"msg":"Password Updated Successfully"})
             }
         });
     } catch (error) {

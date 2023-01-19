@@ -17,12 +17,12 @@ AdminRoute.post("/signup",async(req,res)=>{
                     let data=new AdminUserModel({name,email,password:secure_pass})
                     await data.save()
                     console.log(data)
-                    res.send("Registration Successfull")
+                    res.send({"msg":"Registration Successfull"})
                 }
             });
         } catch (error) {
             console.log(error)
-            res.send("Something went wrong")
+            res.send({"msg":"Something went wrong"})
         }
 
     
@@ -41,16 +41,16 @@ AdminRoute.post("/login",async(req,res)=>{
                     res.send({"msg":"Login Successfull","token":token})
                 }
                 else{
-                    res.send("Wrong Credential")
+                    res.send({"msg":"Wrong Credential"})
                     console.log(err)
                 }
             })
         }
         else{
-            res.send("Wrong Credential")
+            res.send({"msg":"Wrong Credential"})
         }
     } catch (error) {
-        res.send("Wrong Credential")
+        res.send({"msg":"Wrong Credential"})
         console.log(error)
     }
 })
