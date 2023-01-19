@@ -1,3 +1,4 @@
+import { Text } from "@chakra-ui/react"
 import a from "../../../Homepage_Images/vid/a.jpg"
 import b from "../../../Homepage_Images/vid/b.jpg"
 import c from "../../../Homepage_Images/vid/c.jpg"
@@ -21,10 +22,15 @@ let vid_data=[
 ]
 
 export default function Watch(){
-    return (
+    return (<>
+    <Text fontSize="3xl" className="watch_news_text">NEWS & REVIEWS FROM 42 WEST</Text>
         <div className="watch_crousel">
         {vid_data && vid_data.map(el=>(<WatchCard watch_image={el.image} watchText={el.dis} />))}
+
         </div>
+        <br/>
+        <br/>
+    </>
         
     )
 }

@@ -1,9 +1,10 @@
 .watch_crousel{
 
-    padding: 0 10px;
+    padding: 10px 10px;
     display: grid;
     overflow-x: hidden;
     grid-template-columns: repeat(4,1fr);
+    background-color: #033473;
 }
 
 .watch_crousel>div{
@@ -11,6 +12,13 @@
     max-width: 300px;
     /* height: 400px; */
     margin: 10px;
+}
+.watch_crousel>div>p{
+    color: white;
+}
+.watch_news_text{
+    text-align: start;
+    padding-left: 1.2rem;
 }
 
 
