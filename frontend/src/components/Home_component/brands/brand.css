@@ -3,3 +3,10 @@
     margin: auto;
     display: block;
 }
+.brand_carosel_card_box{
+    max-width:132px;
+    background: white;
+    height:160px;
+    margin:0 0.1rem;
+    display: flex !important
+}

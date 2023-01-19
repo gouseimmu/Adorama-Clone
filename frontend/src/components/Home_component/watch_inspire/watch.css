@@ -1,0 +1,16 @@
+.watch_crousel{
+
+    padding: 0 10px;
+    display: grid;
+    overflow-x: hidden;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.watch_crousel>div{
+    min-width: 300px;
+    max-width: 300px;
+    /* height: 400px; */
+    margin: 10px;
+}
+
+

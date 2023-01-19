@@ -17,7 +17,7 @@ export default function Brand_cerosel({brand_data}) {
 <div className="category_cerosel" Style={"margin: auto;display:block;width: 95.5%;padding:2rem 0;"} >
       <Slider {...settings}>
     
-      {brand_data && brand_data .map((el,i)=>(<div Style={"max-width:142px;background: white;height:160px;display:flex;margin:0 0.1rem;"} > <Brand_card b_image={el}/></div>  ))}
+      {brand_data && brand_data .map((el,i)=>(<div className="brand_carosel_card_box" > <Brand_card b_image={el}/></div>  ))}
    
       </Slider>
         </div>

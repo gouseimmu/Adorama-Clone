@@ -12,9 +12,16 @@ import Panasonic_brand_logo from "../../../Homepage_Images/brand/Panasonic_brand
 import Profoto_logo from "../../../Homepage_Images/brand/Profoto_logo.gif"
 import Sigma_logo from "../../../Homepage_Images/brand/Sigma_logo.gif"
 import Sony_brand_logo from "../../../Homepage_Images/brand/Sony_brand_logo.png"
+import { Text } from "@chakra-ui/react";
 let brand_array=[Blackmagic_brand_logo,DJI_logo2,Flashpoint_logo_blue,Fujifilm_brand_logo,GoPro_logo,Microsoft_logo,Nikon_logo,Olympus_brand_logo,Panasonic_brand_logo,Profoto_logo,Sigma_logo,Sony_brand_logo]
 export default function Brands(){
     return (
+        <>
+        <Text fontSize="3xl" Style={"text-align:start;padding:1rem"}>FEATURED BRANDS</Text>
         <Brand_cerosel brand_data={brand_array}/>
+        <br/>
+        <br/>
+
+        </>
     )
 }
