@@ -1,0 +1,32 @@
+.Advertise_box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.Advertise_box>div{
+    width: 90%;
+    margin: auto;
+    height: 32rem;
+}
+
+.Advertise_box>div>p,.Advertise_box>div>a{
+    text-align: start;
+
+}
+
+
+@media screen and (max-width: 500px) {
+    .Advertise_box{
+        display: grid;
+        grid-template-columns:1fr;
+        align-items: center;
+    }
+    .Advertise_box>div>img{
+        display: block;
+        margin: auto;
+    }
+    .Advertise_box>div>p{
+        text-align: center;
+    }
+  }

@@ -2,11 +2,13 @@ import React from 'react'
 import {Routes,Route} from "react-router-dom"
 import AllProducts from '../pages/AllProducts'
 import Cart from '../pages/Cart'
+import ForgotPassword from '../pages/ForgotPassword'
 import Homepage from '../pages/Homepage'
 import Login from '../pages/Login'
 import Payment from '../pages/Payment'
 import Signup from '../pages/Signup'
 import SingleProduct from '../pages/SingleProduct'
+import AddProduct from './AddProduct'
 import AdminDashboard from './AdminDashboard'
 import Product from "./product/Product"
 const MainRoutes = () => {
@@ -18,12 +20,18 @@ const MainRoutes = () => {
             <Route path='/' element={<Homepage/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/signup' element={<Signup/>}/>
+            <Route path='/forgot' element={<ForgotPassword/>}/>
             <Route path='/allproducts' element={<AllProducts/>}/>
             <Route path='/singleproduct' element={<SingleProduct/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/payment' element={<Payment/>}/>
             <Route path="/admin" element={<AdminDashboard/>} />
+
            <Route path='/product' element={<Product/>}/>
+
+
+            <Route path="/add" element={<AddProduct/>} />
+ 
 
           
 

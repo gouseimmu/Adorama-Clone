@@ -42,8 +42,8 @@ UserSignupRoute.post("/login",async(req,res)=>{
             bcrypt.compare(password,user[0].password,(err,result)=>{
                 if(result){
                     // console.log(result)
-                    const token=jwt.sign({"name":user[0].name},"masai")
-                    res.send({"msg":"Login Successfull","token":token})
+                    const token=jwt.sign({"userID":user[0]._id,"name":user[0].firstname},"masai")
+                    res.send({"msg":"Login Successfull","token":token,"firstname":user[0].firstname})
                 }
                 else{
                     res.send("Wrong Credential")
@@ -57,6 +57,28 @@ UserSignupRoute.post("/login",async(req,res)=>{
     } catch (error) {
         res.send("Wrong Credential")
         console.log(error)
+    }
+})
+UserSignupRoute.patch("/update",async(req,res)=>{
+    let {email,password}=req.body
+    let data=await SignupModel.findOne({email})
+    let id=data._id
+    try {
+        bcrypt.hash(password, 5, async(err, secure_pass)=> {
+            if(err){
+                console.log(err)
+                res.send(err)
+            }
+            else{
+                let data=await SignupModel.findByIdAndUpdate({_id:id},{password:secure_pass})
+                
+                console.log(data)
+                res.send("Password Updated Successfully")
+            }
+        });
+    } catch (error) {
+        res.send("Something went wrong")
+        console.log(error)        
     }
 })
 

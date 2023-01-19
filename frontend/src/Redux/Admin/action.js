@@ -21,7 +21,7 @@ const getSuccess=(payload)=>{
 }
 
 const getData=(params)=>(dispatch)=>{
-    console.log(params)
+    // console.log(params)
     dispatch(getRequest());
     return axios.get(`https://bfc-i90o.onrender.com/bfc`,params)
     .then((res)=>dispatch(getSuccess(res.data)))

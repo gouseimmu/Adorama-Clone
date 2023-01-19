@@ -1,0 +1,75 @@
+.More_add_main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+}
+.More_add_main>div{
+    width: 95%;
+    margin: auto;
+}
+.More_add_main>div>p{
+    color: white;
+    text-align: start;
+    padding-left: 1rem;
+
+
+    font-size: 1rem;
+    
+}
+#cat1{
+    background-image: url("../../../Homepage_Images/cat1.webp");
+    background-repeat: no-repeat;
+    height:15rem;
+        background-size: cover;
+
+}
+
+#cat2{
+    background-image: url("../../../Homepage_Images/cat2.jpg");
+    background-repeat: no-repeat;
+    height:15rem;
+        background-size: cover;
+
+}
+
+#cat3{
+    background-image: url("../../../Homepage_Images/cat3.webp");
+    background-repeat: no-repeat;
+    height:15rem;
+        background-size: cover;
+
+}
+
+#cat4{
+    background-image: url("../../../Homepage_Images/cat4.webp");
+    background-repeat: no-repeat;
+    height:15rem;
+        background-size: cover;
+
+}
+
+#cat5{
+    background-image: url("../../../Homepage_Images/cat5.webp");
+    background-repeat: no-repeat;
+    height:15rem;
+        background-size: cover;
+
+}
+
+#cat6{
+    background-image: url("../../../Homepage_Images/cat6.webp");
+    background-repeat: no-repeat;
+    height:15rem;
+        background-size: cover;
+
+}
+
+
+@media screen and (max-width: 890px) {
+    .More_add_main{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
+ 
+  }

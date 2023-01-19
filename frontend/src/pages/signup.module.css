@@ -1,0 +1,188 @@
+
+ #Container{
+    background-color: #004387;
+    width: 100%;
+    height: 50em;
+    padding-top: 5em;
+ }
+
+ #Box1{
+    background-color: #003263;
+    
+    width: 70%;
+    height: 40em;
+    margin: auto;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+ }
+ #Box3>input{
+    display: flex;
+  
+  
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+ }
+ #Box3{
+    height: 35em;
+    width: 50%;
+    background-color: white;
+    margin-left: 11em;
+ }
+ #sub1{
+    width: 50%;
+    height: 35em;
+    border-radius: 15px;
+    
+ }
+ #sub2{
+    width: 50%;
+    height: 40em;
+     border-top-right-radius: 15px;
+     border-bottom-right-radius: 15px;
+     
+    background-color: white;
+ }
+ 
+ #name>h1{
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+    color: white;
+    padding-top: 3em;
+    
+ }
+ #new>h2{
+    text-align: center;
+    font-size: 25px;
+    font-weight: lighter;
+    color: white;
+ }
+ #new>p{
+    text-align: center;
+    font-size: 15px;
+    font-weight: lighter;
+     color: #fbfeff;
+     
+ }
+ 
+ #new{
+    margin-top: 12em;
+ }
+
+
+ #sign{
+   margin-top: 3em;
+ }
+  
+ 
+  
+  #sign>h1{
+    font-size: 30px;
+   margin-left: -5em;
+    font-weight: 500;
+  }
+  form{
+    width: 300px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+    margin-left: 1.3em;
+}
+form>div{
+   margin-left: 2em;
+}
+form>input{
+    padding: 10px ;
+    margin-top: 10px;
+    border-radius: 10px;
+    
+    border: 1px solid rgb(167, 164, 164);
+    width: 350px;
+    height: 40px;
+    background-color: rgb(247, 245, 245);
+    display: block;
+    margin: auto;
+}
+input[type=submit] {
+       
+   margin-top: 1.5em;
+   padding-top: 10px;
+   cursor: pointer;
+   color: white;
+    border-radius: 13px;
+    background-color: rgb(243, 102, 9);
+}
+  
+ 
+ 
+ #good{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1.5em;
+    gap: 23px;
+     
+ }
+ #good>img{
+    height: 25px;
+    width: 48px;
+    position:absolute ;
+    margin-top: -2.5em;
+    margin-left: -12em;
+ }
+ #apple{
+    position: absolute;
+    cursor: pointer;
+ }
+ #apple>img{
+    height: 25px;
+    margin-top: 2.5em;
+    margin-right: 12em;
+    
+    width: 25px;
+ }
+
+ #fl{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin: auto;
+    margin-left: 6.5em;
+ 
+    gap: 15px;
+     
+ }
+ #fl>input{
+    width: 160px;
+    border: 1px solid rgb(167, 164, 164);
+    margin: auto;
+    border-radius: 10px;
+    padding: 4px;
+    height: 38px;
+    margin-bottom: 0.8em;
+   
+   
+ }
+
+ #lab{
+    line-height: 25px;
+    text-align: justify;
+    margin-left: 1em; 
+    font-size: 13px;
+    margin-top: 1em;
+    width: 320px;
+    text-size-adjust: initial;
+ }
+ #ps{
+   margin-bottom: -0.5em;
+ }
+
+ 
