@@ -46,16 +46,16 @@ UserSignupRoute.post("/login",async(req,res)=>{
                     res.send({"msg":"Login Successfull","token":token,"firstname":user[0].firstname})
                 }
                 else{
-                    res.send("Wrong Credential")
+                    res.send({"msg":"Wrong Credential"})
                     console.log(err)
                 }
             })
         }
         else{
-            res.send("Wrong Credential")
+            res.send({"msg":"Wrong Credential"})
         }
     } catch (error) {
-        res.send("Wrong Credential")
+        res.send({"msg":"Wrong Credential"})
         console.log(error)
     }
 })
@@ -77,7 +77,7 @@ UserSignupRoute.patch("/update",async(req,res)=>{
             }
         });
     } catch (error) {
-        res.send("Something went wrong")
+        res.send({"msg":"Something went wrong"})
         console.log(error)        
     }
 })
