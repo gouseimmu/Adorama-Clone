@@ -4,7 +4,11 @@ const { connection } = require("./configs/db")
 const { productRoute } = require("./routes/product.route")
 const { UserSignupRoute } = require("./routes/Usersignup.route")
 require("dotenv").config()
+
 const app=express()
+app.use(cors({
+    origin:"*"
+}))
 app.use(express.json())
 
 

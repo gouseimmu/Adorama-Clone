@@ -8,8 +8,8 @@
  #Box1{
     background-color: #003263;
     
-    width: 60%;
-    height: 35em;
+    width: 70%;
+    height: 40em;
     margin: auto;
     border-radius: 15px;
     display: flex;
@@ -40,7 +40,7 @@
  }
  #sub2{
     width: 50%;
-    height: 35em;
+    height: 40em;
      border-top-right-radius: 15px;
      border-bottom-right-radius: 15px;
      
@@ -73,12 +73,14 @@
 
 
  
-  
+  #sign{
+   margin-top: 3em;
+  }
  
   
   #sign>h1{
-    font-size: 35px;
-   margin-left: -8em;
+    font-size: 30px;
+   margin-left: -7em;
     font-weight: 500;
   }
   form{
