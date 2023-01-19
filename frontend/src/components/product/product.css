@@ -1,52 +1,114 @@
-*{margin: 0;
-padding: 0;}
-.pro1{
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pro1 {
     background-image: url("https://www.adorama.com/images/cms/15616Photography-Category-Header-BG_18641.jpg");
     /* border: 1px solid red; */
     width: 100%;
     height: 200px;
     align-items: center;
-    /* text-align: center; */
+    text-align: center;
     margin: auto;
+    justify-items: center;
+    margin-bottom: 30px;
 }
 
-.pro2{
-   width: 20%;
+.pro2 {
+    width: 20%;
     /* height: 40px; */
-    border:1px solid green;
+    /* border:1px solid green; */
     text-align: center;
     color: #FFFFFF;
     /* align-items: center; */
     /* margin: 72px 0px 12px; */
-    font-size:42px;
+    font-size: 42px;
     margin: auto;
-   margin-top: 20px;
-   
+    margin-top: 20px;
+    position: relative;
 }
 
-.pro4{
+.pro2>h1 {
+    position: absolute;
+    top: 80px;
+    left: 7%;
+    margin: auto;
+    font-weight: bold;
+}
+
+.pro3>h2 {
+    margin: auto;
+    font-size: 30px;
+}
+
+.pro3>a {
+    margin: auto;
+    font: 16px Lato, sans-serif ;
+    color: #0066CC;
+}
+
+.pro5 {
     height: 80%;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(6,1fr);
-    grid-template-rows: repeat(3,1fr);
+    margin-top: 30px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     align-items: center;
-    padding: 20px;
-    gap: 30px;
+    padding: 40px;
+    gap: 50px;
     border: 1px solid red;
-    
 }
-.pro4>div{
+
+/* .pro5>div{
     width: 80%;
-    border-radius: 150px;
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     align-items: center;
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+} */
+img {
+    width: 60%;
+    display: block;
+    margin: auto;
+    border: 2px solid black;
+    height: 90%;
+    justify-items: center;
+    align-items: center;
+    margin-top: 30px;
+   
 }
-.pro4>div>img{
-    width: 70%;
+
+.spa {
+    /* border: 2px solid green; */
+    margin-top: 10px;
+    width: 100%;
+    color: #0066CC;
+    font:16px Lato, sans-serif ;
+}
+
+.circle {
+    border: 2px solid white;
+    margin: auto;
+    align-items: center;
+    border-radius: 50%;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 90%;
+    
+
+}
+.circle:hover{
+    width: 90%;
+}
+
+
+
+.pro6 {
+    width: 80%;
+    /* border: 1px solid red; */
+    height: 98%;
     align-items: center;
     margin: auto;
-    
 }
