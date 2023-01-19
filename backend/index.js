@@ -3,6 +3,8 @@ const cors=require("cors")
 const { connection } = require("./configs/db")
 const { productRoute } = require("./routes/product.route")
 const { UserSignupRoute } = require("./routes/Usersignup.route")
+const {AdminRoute}=require("./routes/AdminUser.route")
+const { cartRoute } = require("./routes/cart.route")
 require("dotenv").config()
 const app=express()
 app.use(express.json())
@@ -13,6 +15,8 @@ app.get("/",(req,res)=>{
 })
 app.use("/product",productRoute)
 app.use("/user",UserSignupRoute)
+app.use("/admin",AdminRoute)
+app.use("/cart",cartRoute)
 
 app.listen(process.env.port,async()=>{
     try {
