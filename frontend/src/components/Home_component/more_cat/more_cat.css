@@ -2,9 +2,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 1rem;
-
-
-
 }
 .More_add_main>div{
     width: 95%;
@@ -66,3 +63,13 @@
         background-size: cover;
 
 }
+
+
+@media screen and (max-width: 890px) {
+    .More_add_main{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
+ 
+  }

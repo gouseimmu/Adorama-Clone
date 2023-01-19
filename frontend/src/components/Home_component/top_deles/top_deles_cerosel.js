@@ -10,7 +10,45 @@ export default function Top_deal_cero({data}) {
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 3,
-        cssEase: "linear"
+        cssEase: "linear",
+        responsive: [
+            {
+              breakpoint: 990,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+                breakpoint: 769,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  infinite: true,
+                  dots: true
+                }
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                  infinite: true,
+                  dots: true
+                }
+              },
+              {
+                breakpoint: 360,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 2,
+                  infinite: true,
+                  dots: true
+                }
+              },
+        ]
     };
     return (
 <div Style={"margin: auto;display:block;width: 95.5%;padding-bottom:2.5rem"} >

@@ -16,6 +16,35 @@ export default function Cat_carousel({category_name,category_data}) {
         autoplay: true,
         speed: 5000,
         autoplaySpeed: 5000,
+        responsive: [
+            {
+              breakpoint: 776,
+              settings: {
+                slidesToShow: 6,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+                breakpoint: 595,
+                settings: {
+                  slidesToShow: 5,
+                  slidesToScroll: 3,
+                  infinite: true,
+                  dots: true
+                }
+              },
+              {
+                breakpoint: 475,
+                settings: {
+                  slidesToShow: 4,
+                  slidesToScroll: 3,
+                  infinite: true,
+                  dots: true
+                }
+              },
+        ]
     };
     return (
 <div className="category_cerosel" Style={"margin: auto;display:block;width: 95.5%;padding:2rem 0"} >

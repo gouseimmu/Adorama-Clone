@@ -7,7 +7,7 @@ export default function Top_deal_card({image,name,price,reviews,rating}){
     return (
         <div>
 
-        <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' Style={"width:85%;background:white"}>
+        <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' Style={"width:85%;background:white;margin:auto;"}>
         <Image src={image} Style={"display:block;margin:auto;width:60%"}/>
   
         <Box p='6' >
