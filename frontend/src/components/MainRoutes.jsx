@@ -7,6 +7,7 @@ import Login from '../pages/Login'
 import Payment from '../pages/Payment'
 import Signup from '../pages/Signup'
 import SingleProduct from '../pages/SingleProduct'
+import AddProduct from './AddProduct'
 import AdminDashboard from './AdminDashboard'
 
 const MainRoutes = () => {
@@ -23,7 +24,8 @@ const MainRoutes = () => {
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/payment' element={<Payment/>}/>
             <Route path="/admin" element={<AdminDashboard/>} />
-
+            <Route path="/add" element={<AddProduct/>} />
+ 
           
 
         </Routes>
