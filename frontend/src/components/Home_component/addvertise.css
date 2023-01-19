@@ -16,7 +16,7 @@
 }
 
 
-@media screen and (min-width: 500px) {
+@media screen and (max-width: 500px) {
     .Advertise_box{
         display: grid;
         grid-template-columns:1fr;

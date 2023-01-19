@@ -19,13 +19,21 @@
     text-align: start;
     padding-left: 1.2rem;
 }
-/* @media screen and (min-width: 1300px) {
+@media screen and (max-width: 639px) {
     .watch_crousel{
-
-        padding: 10px 10px;
+        margin: 10px 10px;
         display: grid;
         overflow-x: hidden;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(2,1fr);
         background-color: #033473;
     }
-  } */
+  }
+  @media screen and (max-width: 404px) {
+    .watch_crousel{
+        margin: 10px 10px;
+        display: grid;
+        overflow-x: hidden;
+        grid-template-columns: repeat(1,1fr);
+        background-color: #033473;
+    }
+  }
