@@ -6,7 +6,11 @@ const { UserSignupRoute } = require("./routes/Usersignup.route")
 const {AdminRoute}=require("./routes/AdminUser.route")
 const { cartRoute } = require("./routes/cart.route")
 require("dotenv").config()
+
 const app=express()
+app.use(cors({
+    origin:"*"
+}))
 app.use(express.json())
 
 

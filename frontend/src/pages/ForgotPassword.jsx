@@ -1,20 +1,20 @@
-import React  from "react";
+import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./login.module.css";
 
-const Login = () => {
+const ForgotPassword = () => {
   const [email,setEmail]=useState("")
   const[password,setPass] = useState("")
   const handelSubmit=(e)=>{
     e.preventDefault()
     const payload={
-      email,
-      password
+      email:email,
+      password:password
     }
 
     fetch("http://localhost:8080/user/login",{
-      method:"POST",
+      method:"PATCH",
       body:JSON.stringify(payload),
       headers:{
         "Content-type":"application/json"
@@ -40,37 +40,28 @@ const Login = () => {
         </div>
         <div id={styles.sub2}>
           <div id={styles.sign}>
-            <h1>Sign In</h1>
+            <h1>RESET PASSWORD</h1>
             <div>
               <form onSubmit={handelSubmit}>
                 <label>Your Email :</label>
                 <br />
                 <input type="email" placeholder="Email" required value={email} onChange={(e)=>setEmail(e.target.value)} />
                 <br />
-                <label>Your Password :</label>
+                <label>New Password :</label>
                 <br />
-                <input type="password" placeholder="Password" required value={password} onChange={(e)=>setPass(e.target.value)} />
-                <label>
-                  <input type="checkbox" name="remember" /> Remember me
-                </label>
-                <input type="submit" value="LOGIN" />
+                <input type="password" placeholder=" New Password" required value={password} onChange={(e)=>setPass(e.target.value)} />
+                 
+                <input type="submit" value="RESET PASSWORD" />
                 <br />
               </form>
-              <p id={styles.ps}><Link to="/forgot">Forgot Password ?</Link> </p>
+              
             </div>
-            <div>
-            <hr  styles={{"width":"15px"}}/>
-            </div>
-            <div id={styles.good}>
-              <img src="https://blog.hubspot.com/hubfs/image8-2.jpg" alt="df" />
-              <button>   Sign in With Google</button>
-              <div id={styles.apple}>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png" alt="apple" />
-              </div>
-              <button>Sign in With Apple</button>
+            
+           
+            
 
              
-            </div>
+             
           </div>
         </div>
       </div>
@@ -78,6 +69,6 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgotPassword;
 
  
