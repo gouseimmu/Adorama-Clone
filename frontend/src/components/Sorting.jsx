@@ -8,10 +8,10 @@ import { getData } from '../Redux/Admin/action';
 const Sorting = () => {
   const dispatch=useDispatch();
   const data=useSelector((store)=>{
-    console.log(store)
+    // console.log(store)
    return  store.AdminReducer.data
   });
-  console.log(data)
+  // console.log(data)
 
   const [searchParams,setSearchParams]=useSearchParams();
   const initialCategory=searchParams.getAll("category");
@@ -40,18 +40,19 @@ const Sorting = () => {
     }
     // console.log(newCategories)
     setcategory(newCategories)
-    console.log(category)
+    // console.log(category)
     
   }
 
   useEffect(() => {
     let params={};
-    params.option=category;
+    params.category=category;
     sort&&(params.sort=sort);
     setSearchParams(params);
-    dispatch(getData(params));
-    console.log(searchParams)
-  }, [category,sort]);
+    // console.log(params)
+    // dispatch(getData(params));
+    // console.log(searchParams)
+  }, [category,setSearchParams,sort]);
 
   return (
     <div style={{ width: "300px" }}>
@@ -148,14 +149,14 @@ const Sorting = () => {
           <label htmlFor="">beverages</label>
         </div>
       </div>
-      <Heading as="h3" size="md" mt="5%" style={{ marginBottom: "5%" }}>Filter Component</Heading>
+      {/* <Heading as="h3" size="md" mt="5%" style={{ marginBottom: "5%" }}>Sorting Component</Heading>
       <div onChange={handlesort} style={{textAlign:"left",marginLeft:"20%"}}  >
         <input style={{marginRight:"5%"}} type="radio" name="sortBy" id="" value="asc" defaultChecked={sort=="asc"} />
         <label htmlFor="">Ascending</label>
         <br/>
         <input style={{marginRight:"5%"}} type="radio" name="sortBy" id="" value="desc" defaultChecked={sort=="desc"} />
         <label htmlFor="">Descending</label>
-      </div>
+      </div> */}
     </div>
   )
 }
