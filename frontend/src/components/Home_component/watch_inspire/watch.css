@@ -1,6 +1,6 @@
 .watch_crousel{
 
-    padding: 10px 10px;
+    margin: 10px 10px;
     display: grid;
     overflow-x: hidden;
     grid-template-columns: repeat(4,1fr);
@@ -8,8 +8,7 @@
 }
 
 .watch_crousel>div{
-    min-width: 300px;
-    max-width: 300px;
+    width: auto;
     /* height: 400px; */
     margin: 10px;
 }
@@ -20,5 +19,13 @@
     text-align: start;
     padding-left: 1.2rem;
 }
+/* @media screen and (min-width: 1300px) {
+    .watch_crousel{
 
-
+        padding: 10px 10px;
+        display: grid;
+        overflow-x: hidden;
+        grid-template-columns: repeat(4,1fr);
+        background-color: #033473;
+    }
+  } */

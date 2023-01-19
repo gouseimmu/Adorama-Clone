@@ -14,3 +14,19 @@
     text-align: start;
 
 }
+
+
+@media screen and (min-width: 500px) {
+    .Advertise_box{
+        display: grid;
+        grid-template-columns:1fr;
+        align-items: center;
+    }
+    .Advertise_box>div>img{
+        display: block;
+        margin: auto;
+    }
+    .Advertise_box>div>p{
+        text-align: center;
+    }
+  }
