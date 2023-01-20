@@ -13,7 +13,7 @@ const ForgotPassword = () => {
       password:password
     }
 
-    fetch("http://localhost:8080/user/login",{
+    fetch("http://localhost:8080/user/update",{
       method:"PATCH",
       body:JSON.stringify(payload),
       headers:{
