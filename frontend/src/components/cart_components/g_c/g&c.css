@@ -1,0 +1,25 @@
+.cirtificates_awards{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+.secutity>p,.guarenty>p{
+    text-align: start;
+}
+
+.secutity,.guarenty{
+    padding: 0.6rem;
+}
+
+.a_images{
+    width: 21% ;
+    margin: 0 0 ;
+}
+.b_images{
+    width: 15%;
+    margin: 0 0 ;
+}
+.c_images{
+    width: 21% ;
+    margin: 0 0 ;
+}

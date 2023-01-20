@@ -1,0 +1,8 @@
+.odder_summery_main{
+    background-color:#F2F2F2;
+    padding: 1rem;
+}
+.summer_sub_info,.final_total{
+    display: flex;
+    justify-content: space-between;
+}
