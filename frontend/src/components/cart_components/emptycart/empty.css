@@ -1,0 +1,10 @@
+.Emptycart_box{
+    border: 5px solid rgba(189, 183, 183, 0.788);
+    height: 400px;
+    width: 95%;
+    margin: auto;
+}
+.con_shopping{
+    position: relative;
+    top:50%
+}
