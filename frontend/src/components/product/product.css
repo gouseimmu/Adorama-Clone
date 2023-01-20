@@ -44,7 +44,7 @@
 
 .pro3>a {
     margin: auto;
-    font: 16px Lato, sans-serif ;
+    font: 16px Lato, sans-serif;
     color: #0066CC;
 }
 
@@ -58,26 +58,18 @@
     align-items: center;
     padding: 40px;
     gap: 50px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
-/* .pro5>div{
-    width: 80%;
-    border: 1px solid blue;
-    align-items: center;
-    margin: auto;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-} */
-img {
-    width: 60%;
+.imgg {
+    width: 70%;
     display: block;
     margin: auto;
-    border: 2px solid black;
     height: 90%;
     justify-items: center;
     align-items: center;
     margin-top: 30px;
-   
+
 }
 
 .spa {
@@ -85,7 +77,7 @@ img {
     margin-top: 10px;
     width: 100%;
     color: #0066CC;
-    font:16px Lato, sans-serif ;
+    font: 16px Lato, sans-serif;
 }
 
 .circle {
@@ -96,10 +88,11 @@ img {
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     height: 90%;
-    
+
 
 }
-.circle:hover{
+
+.circle:hover {
     width: 90%;
 }
 
@@ -111,4 +104,45 @@ img {
     height: 98%;
     align-items: center;
     margin: auto;
+}
+
+.alp1 {
+    width: 50%;
+    margin: auto;
+    text-align: start;
+}
+
+.alp1 span {
+    font: 18px Lato, sans-serif;
+    color: #222222;
+}
+
+.alp1 h2 {
+    font: 25px Lato, sans-serif;
+}
+
+.rec {
+    display: flex;
+    text-align: left;
+    margin: auto;
+    margin-top: 50px;
+    height: 100px;
+    background-color: #0000000A;
+    
+}
+
+.rec >div h1 {
+    align-items: center;
+    padding: 30px;
+    color: #222222;
+    font: 25px Lato, sans-serif;
+    /* border: 1px solid black; */
+}
+.cl{
+    /* border: 1px solid red; */
+    width: 80%;
+    text-align: end;
+    padding: 40px;
+    color: #0066CC;
+    font:12px Lato,"Open Sans", sans-serif ;
 }
