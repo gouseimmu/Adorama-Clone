@@ -1,0 +1,16 @@
+.brand_card{
+    width: 90%;
+    margin: auto;
+    display: block;
+    /* border: 1px solid teal; */
+}
+.brand_carosel_card_box{
+    max-width:132px;
+    background: #0000000A;
+    height:160px;
+    margin:0 0.1rem;
+    display: flex !important;
+    /* border: 1px solid blueviolet; */
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+}
+
