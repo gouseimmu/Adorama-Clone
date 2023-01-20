@@ -6,11 +6,16 @@ import {
   Divider,
   Img,
   Button,
-  VStack,
+ 
+  Flex,
+  Stack,
 } from "@chakra-ui/react";
 import React from "react";
+import { useState } from "react";
 
 const Payment = () => {
+  const [count,setCount] = useState(0)
+ 
   return (
     <>
       <Box m={"auto"} w={"85%"} mt={"1em"}>
@@ -54,75 +59,137 @@ const Payment = () => {
           h={"28em"}
           w={"65%"}
         >
-          <Box w={"30%"} h={"27em"}>
+          <Box w={"20%"} borderRadius={"10px"} h={"25em"}>
             <Img
+              height={"8em"}
+              w={"8em"}
+              pt={"0.5em"}
               src="https://www.adorama.com/images/300x300/fpbs10.jpg"
               alt="image"
             />
           </Box>
-          <Box w={"80%"} h={"8em"} mt={"1.5em"}>
-            <Box
-              display={"flex"}
-              flexDirection={"row"}
-              pt={"3.4em"}
-              alignItems={"flex-start"}
-              justifyContent={"space-between"}
-              m={"auto"}
-              w={"100%"}
-              h={"8em"}
-            >
-              <Text fontWeight={"bold"} fontSize={"18px"}>
-                FlashPoint 10 Background Suppourt System-Air
-              </Text>
-              <Button>^</Button>
-              <Text fontWeight={"bold"} fontSize={"18px"}>
-                $890.00
-              </Text>
-            </Box>
+          <Box w={"80%"} h={"23em"} mt={"1.5em"}>
+            <Box w={"100%"} height={"11em"} m={"auto"}>
+              <Box pt={"1.5em"}>
+                <Flex
+                  alignItems={"flex-start"}
+                  justifyContent={"space-between"}
+                  m={"auto"}
+                >
+                  <Text
+                    color={"blue"}
+                    fontWeight={"semibold"}
+                    fontSize={"20px"}
+                  >
+                    FlashPoint 10 Background Suppourt System-Air
+                  </Text>
+                  <Box w={"10%"}  >
+                    <Flex  alignItems={"flex-start"} justifyContent={"space-around"} flexDirection={"row"} gap={"8px"} m={"auto"}>
 
-            <Box
-              m={"auto"}
-              display={"flex"}
-              pt={"1.5"}
-              flexDirection={"row"}
-              justifyContent={"space-evenly"}
-              alignItems={"flex-start"}
-              w={"100%"}
-              h={"6em"}
-            >
-              <Img
-                h={"3em"}
-                w={"3.9em"}
-                src="https://adorama.com/col/UIimages/VIp360/VIPPRO-Logo.png"
-                alt="vip"
-              />
-              <Text>Free 2-Day Shipping, 1 Year Drops & Spills and more!</Text>
-              <Text fontWeight={"bold"}>$49.90</Text>
-              <Button color={"white"} bg={"orange"}>
-                ADD
-              </Button>
+                  <Button onClick={()=>setCount(count+1)}>+</Button>
+                  <Button>{count}</Button>
+                  <Button disabled={count===0}  onClick={( )=>setCount(count-1)}>-</Button>
+                    </Flex>
+
+                  </Box>
+                  <Text fontWeight={"bold"} fontSize={"18px"}>
+                    $890.00
+                  </Text>
+                </Flex>
+              </Box>
+
+              <Box w={"12%"}>InStock</Box>
+              <Box w={"62%"} mt={"1.5em"}>
+                <Flex
+                  alignItems={"flex-start"}
+                  justifyContent={"space-evenly"}
+                  gap={"10px"}
+                  m={"auto"}
+                >
+                  <Text cursor={"pointer"} color={"blue"}>
+                    Save For Later
+                  </Text>
+                  <Stack direction="row" h="30px">
+                    <Divider orientation="vertical" />
+                    <Text cursor={"pointer"} color={"blue"}>
+                      Accessories
+                    </Text>
+                  </Stack>
+
+                  <Stack direction="row" h="30px">
+                    <Divider orientation="vertical" />
+                    <Text cursor={"pointer"} color={"blue"}>
+                      Move to Whishlist
+                    </Text>
+                  </Stack>
+                </Flex>
+              </Box>
             </Box>
             <Box
-              pt={"1.5"}
-              display={"flex"}
-              flexDirection={"row"}
-              justifyContent={"space-evenly"}
-              alignItems={"flex-start"}
-              m={"auto"}
+              border={"1px solid gray"}
+              pr={"1em"}
+              pt={"1em"}
               w={"100%"}
-              h={"6em"}
+              h={"5em"}
             >
-              <Img
-                h={"3em"}
-                w={"4.5em"}
-                src="https://www.adorama.com/col/_ado-protect-extend/ado-protect-extend-logo.svg"
-                alt="vip"
-              />
-              <Text>Free 2-Day Shipping, 1 Year Drops & Spills and more!</Text>
-              <Text fontWeight={"bold"}>$49.90</Text>
-              <Button color={"white"} bg={"blue"}>
-                ADD
-              </Button>
+              <Box>
+                <Flex
+                  width={"40em"}
+                  gap={"2em"}
+                  alignItems={"flex-start"}
+                  justifyContent={"space-evenly"}
+                  m={"auto"}
+                >
+                  <Img
+                    h={"2em"}
+                    w={"3.5em"}
+                    m={"auto"}
+                    src="https://www.adorama.com/col/_ado-protect-extend/ado-protect-extend-logo.svg"
+                    alt="vip"
+                  />
+                  <Text width={"22em"} textAlign={"justify"}>
+                    Free 2-Day Shipping, 1 Year Drops & Spills and more!
+                  </Text>
+                  <Text fontWeight={"bold"}>$49.90</Text>
+                  <Button color={"white"} bg={"blue"}>
+                    ADD
+                  </Button>
+                </Flex>
+              </Box>
+            </Box>
+            <Box
+              mt={"2em"}
+              border={"1px solid grey"}
+              pr={"1em"}
+              pl={"0.5"}
+              w={"100%"}
+              pt={"1em"}
+              h={"5em"}
+            >
+              <Box>
+                <Flex
+                  width={"40em"}
+                  gap={"2em"}
+                  alignItems={"flex-start"}
+                  justifyContent={"space-evenly"}
+                  m={"auto"}
+                >
+                  <Img
+                    h={"1em"}
+                    w={"3.5em"}
+                    m={"auto"}
+                    src="https://adorama.com/col/UIimages/VIp360/VIPPRO-Logo.png"
+                    alt="vip"
+                  />
+                  <Text textAlign={"justify"}>
+                    Free 2-Day Shipping, 1 Year Drops & Spills and more!
+                  </Text>
+                  <Text fontWeight={"bold"}>$49.90</Text>
+                  <Button color={"white"} bg={"orange"}>
+                    ADD
+                  </Button>
+                </Flex>
+              </Box>
             </Box>
           </Box>
         </Box>
@@ -168,6 +235,7 @@ const Payment = () => {
             alignItems={"flex-start"}
             justifyContent={"space-around"}
             m={"auto"}
+            mb={"0.5em"}
           >
             <Text fontSize={"25px"} fontWeight={"bold"}>
               Order Total
@@ -191,37 +259,37 @@ const Payment = () => {
             display={"flex"}
             alignItems={"flex-start"}
             justifyContent={"center"}
-            
             m={"auto"}
             gap={"10px"}
             w={"100%"}
-            pt={"2em"}
+            pt={"1.8em"}
           >
             <Img
-            borderRadius={"15px"}
+              borderRadius={"15px"}
               height={"3em"}
               cursor={"pointer"}
               w={"8em"}
-              boxShadow={"lg"}
               src="https://www.pngitem.com/pimgs/m/152-1521099_paypal-icon-hd-png-download.png"
               alt="paypal"
             />
             <Img
               height={"3em"}
               w={"8em"}
-              boxShadow={"lg"}
               borderRadius={"15px"}
               cursor={"pointer"}
               src=" https://cdn.worldvectorlogo.com/logos/phonepe-1.svg"
               alt="phonepe"
             />
           </Box>
-          <Button w={"70%"} mt={"1.5em"} height={"3em"}>
-            <Img   height={"2.5em"}
-             boxShadow={"lg"}
-             borderRadius={"15px"}
-              w={"8em"} src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Pay_Logo_%282020%29.svg/2560px-Google_Pay_Logo_%282020%29.svg.png" alt="gpay"/>
-          </Button>
+
+          <Img
+            cursor={"pointer"}
+            height={"2.5em"}
+            borderRadius={"15px"}
+            w={"9em"}
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Pay_Logo_%282020%29.svg/2560px-Google_Pay_Logo_%282020%29.svg.png"
+            alt="gpay"
+          />
         </Box>
       </Box>
     </>
@@ -229,3 +297,5 @@ const Payment = () => {
 };
 
 export default Payment;
+
+ 

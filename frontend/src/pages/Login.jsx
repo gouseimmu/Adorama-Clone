@@ -1,11 +1,13 @@
 import React  from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
 
 const Login = () => {
   const [email,setEmail]=useState("")
   const[password,setPass] = useState("")
+  const navigate = useNavigate()
+  const userdetails = []
   const handelSubmit=(e)=>{
     e.preventDefault()
     const payload={
@@ -20,7 +22,17 @@ const Login = () => {
         "Content-type":"application/json"
       }
     }).then(res=>res.json())
-    .then(res=>console.log(res))
+    .then(res=>{
+      userdetails.push({"token":res.token})
+      userdetails.push({"name":res.firstname})
+      localStorage.setItem("details" ,JSON.stringify(userdetails))
+      if(res.msg=="Login Successfull"){
+        navigate("/")
+      }else{
+          alert("wrong Credentials")
+          console.log(res.msg)
+      }
+    })
     .catch(err=>console.log(err))
   }
   
