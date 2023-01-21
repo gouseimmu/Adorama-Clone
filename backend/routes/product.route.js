@@ -3,8 +3,9 @@ const {ProductModel}=require("../model/product.model")
 const productRoute=express.Router()
 
 productRoute.get("/",async(req,res)=>{
+    let query=req.query
     try {
-        let allProduct=await ProductModel.find()
+        let allProduct=await ProductModel.find(query)
         console.log("You got the product")
         res.send(allProduct)
     } catch (error) {
@@ -12,6 +13,27 @@ productRoute.get("/",async(req,res)=>{
         res.send("Something went wrong")
     }
 })
+productRoute.get("/search/:key", async (req, res) => {
+    
+    console.log(req.params.key)
+    try {
+        let data=await ProductModel.find({
+            "$or":[
+                {title:{$regex:req.params.key}},
+                {brand:{$regex:req.params.key}},
+                {category:{$regex:req.params.key}}
+            ]
+          })
+          res.send(data)
+          
+        
+        
+    } catch (error) {
+        console.log(error)
+    }
+})
+    
+  
 productRoute.post("/addproduct",async(req,res)=>{
     let payload=req.body
     console.log(payload)
