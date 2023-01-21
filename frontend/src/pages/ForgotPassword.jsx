@@ -1,11 +1,14 @@
+import { useToast } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
 
 const ForgotPassword = () => {
   const [email,setEmail]=useState("")
   const[password,setPass] = useState("")
+  const navigate = useNavigate()
+  const toast = useToast()
   const handelSubmit=(e)=>{
     e.preventDefault()
     const payload={
@@ -20,7 +23,24 @@ const ForgotPassword = () => {
         "Content-type":"application/json"
       }
     }).then(res=>res.json())
-    .then(res=>console.log(res))
+    .then(res=>{
+      if(res.msg="Password Updated Successfully"){
+        toast({
+          title: "Password Updated Successfully.",
+          description: "We've created your account for you.",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+        navigate("/login")
+      }else{
+        toast({
+          title: "Something Went Wrong",
+          status: "error",
+          isClosable: true,
+        })
+      }
+    })
     .catch(err=>console.log(err))
   }
   
