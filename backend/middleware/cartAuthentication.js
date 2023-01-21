@@ -6,10 +6,11 @@ const authorization=(req,res,next)=>{
         if(decoded){
             let userID=decoded.userID
             req.body.userID=userID
+            console.log("hello")
             next()
         }
         else{
-
+            console.log("Please Login First")
             res.send("Please Login First")
         }
         
