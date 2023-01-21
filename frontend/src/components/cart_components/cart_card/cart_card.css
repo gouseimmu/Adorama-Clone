@@ -5,9 +5,14 @@
 }
 .cart_card_main{
     height: auto;
-    border: 5px solid gray ;
-    border-bottom: 2.5px solid gray;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     width: 95%;
+    margin:auto;
+    background-color: #a6c4e2;
+    margin-bottom: 26px
+}
+.cart_card_main div{
+    padding-top: 10px;
 }
 
 .cart_cart_image{
@@ -17,7 +22,8 @@
 }
 .cart_cart_image>img{
     display: block;
-    margin:auto
+    margin:auto;
+    width: 60%;
 }
 .cart_cart_dic{
 grid-column: 2/3;
