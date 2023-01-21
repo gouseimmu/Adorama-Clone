@@ -1,6 +1,7 @@
+import { useToast } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import styles from "./signup.module.css";
 
 const Signup = () => {
@@ -9,7 +10,8 @@ const Signup = () => {
   const[email,setEmail]=useState("")
   const[password,setPassword]= useState("")
   const[cpassword,setcpassword]=useState("")
-
+  const toast = useToast()
+const navigate = useNavigate()
 
 const handelSubmit = (e)=>{
   e.preventDefault()
@@ -31,7 +33,18 @@ const handelSubmit = (e)=>{
       "Content-type":"application/json"
     }
   }).then(res=>res.json())
-  .then(res=>console.log(res))
+  .then(res=> {
+    if(res.msg=="Registration Successfull"){
+      toast({
+        title: "Account created.",
+        description: "We've created your account for you.",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+      navigate("/login")
+    }
+  })
   .catch(err=>console.log(err))
 }
 
