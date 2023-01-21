@@ -3,13 +3,39 @@ const {ProductModel}=require("../model/product.model")
 const productRoute=express.Router()
 
 productRoute.get("/",async(req,res)=>{
-    try {
-        let allProduct=await ProductModel.find()
-        console.log("You got the product")
-        res.send(allProduct)
-    } catch (error) {
-        console.log(error)
-        res.send("Something went wrong")
+    const category=req.query.category;
+    console.log(typeof(category))
+    console.log(category)
+    console.log("query:",req.query)
+    console.log("Body:",req.body)
+    // try {
+    //     let allProduct=await ProductModel.find()
+    //     console.log("You got the product")
+    //     res.send(allProduct)
+    // } catch (error) {
+    //     console.log(error)
+    //     res.send("Something went wrong")
+    // }
+    try{
+        if(category!=undefined&&typeof(category)=="string"){
+            const post=await ProductModel.find({category});
+            res.send(post);
+        }else if(category!=undefined&&category.length>0&&typeof(category)=="object"){
+            let arr=[];
+            for(let i=0;i<category.length;i++){
+                const post1=await ProductModel.find({category:category[i]});
+                arr.push(post1);
+            }
+            console.log(arr.length)
+            res.send(arr);
+        }else{
+            const post=await ProductModel.find();
+            res.send(post);
+
+        }
+    }catch(err){
+        res.send("Something Went Wrong");
+        console.log(err);
     }
 })
 productRoute.post("/addproduct",async(req,res)=>{
