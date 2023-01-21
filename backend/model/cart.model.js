@@ -13,7 +13,7 @@ const cartSchema=mongoose.Schema({
     },
     quantity:{
         type:Number,
-        required:true,
+        required:false,
         default:1
     }
 })

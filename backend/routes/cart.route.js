@@ -12,7 +12,7 @@ cartRoute.get("/", async (req, res) => {
       "userID",
       "productID",
     ]);
-//   console.log(data)
+
     return res.send(data);
   });
 
@@ -33,8 +33,9 @@ cartRoute.post("/additem",async(req,res)=>{
 })
 cartRoute.patch("/update", async (req, res) => {
   let { type, productID,userID } = req.body;
-
-  let existingcartItems = await CartModel.findOne({ userID, productID });
+console.log(req.body)
+  let existingcartItems = await CartModel.findOne({_id:productID });
+  console.log(existingcartItems)
   try {
     if (type === "dec") {
       let updatedData = await CartModel.findByIdAndUpdate(
@@ -60,23 +61,31 @@ cartRoute.patch("/update", async (req, res) => {
   }
 });
 
-cartRoute.delete("/delete", async (req, res) => {
-  let { productID,userID } = req.body;
+cartRoute.delete(`/delete/:id`, async (req, res) => {
+  // let { productID,userID } = req.body;
   // let userId = req.headers.userid;
   // console.log(type,productId,userId)
-
-  let existingcartItems = await CartModel.findOne({ userID, productID });
+  let pr_id=req.params.id
+  console.log(pr_id)
+//  console.log(productID,userID)
+  // let existingcartItems = await CartModel.findOne({ userID, productID });
   // console.log(existingcartItems);
-  if (existingcartItems) {
-    try {
-      await CartModel.findByIdAndDelete(existingcartItems._id);
-      return res.send("item deleted from cart");
-    } catch {
-      return res.status(500).send(e.message);
-    }
-  } else {
-    return res.status(500).send("something went wrong");
+  try {
+    await CartModel.findByIdAndDelete({_id:pr_id});
+    return res.send("item deleted from cart");
+  } catch (err){
+    return res.status(500).send(err);
   }
+  // if (existingcartItems) {
+  //   try {
+  //     await CartModel.findByIdAndDelete(existingcartItems._id);
+  //     return res.send("item deleted from cart");
+  //   } catch {
+  //     return res.status(500).send(e.message);
+  //   }
+  // } else {
+  //   return res.status(500).send("something went wrong");
+  // }
 });
 
 module.exports={
