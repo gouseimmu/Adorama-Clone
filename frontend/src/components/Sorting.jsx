@@ -63,70 +63,70 @@ const Sorting = () => {
             style={{marginRight:"5%"}}
             type="checkbox"
             onChange={handlefilter}
-            value="biryani"
-            checked={category.includes("biryani")}
+            value="COMPUTER"
+            checked={category.includes("COMPUTER")}
           />
-          <label htmlFor="">Biryani</label>
+          <label htmlFor="">COMPUTER</label>
         </div>
         <div>
           <input
           style={{marginRight:"5%"}}
             type="checkbox"
             onChange={handlefilter}
-            value="burger"
-            checked={category.includes("burger")}
+            value="PHOTOGRAPHY"
+            checked={category.includes("PHOTOGRAPHY")}
           />
-          <label htmlFor="">Burger</label>
+          <label htmlFor="">PHOTOGRAPHY</label>
         </div>
         <div>
           <input
           style={{marginRight:"5%"}}
             type="checkbox"
             onChange={handlefilter}
-            value="Chicken"
-            checked={category.includes("Chicken")}
+            value="HOME ELECTRONICS"
+            checked={category.includes("HOME ELECTRONICS")}
           />
-          <label htmlFor="">Chicken</label>
+          <label htmlFor="">HOME ELECTRONICS</label>
         </div>
         <div>
           <input
           style={{marginRight:"5%"}}
             type="checkbox"
             onChange={handlefilter}
-            value="exclusivedeal"
-            checked={category.includes("exclusivedeal")}
+            value="MUSICAL INSTRUMENTS"
+            checked={category.includes("MUSICAL INSTRUMENTS")}
           />
-          <label htmlFor="">exclusivedeal</label>
+          <label htmlFor="">MUSICAL INSTRUMENTS</label>
         </div>
         <div>
           <input
           style={{marginRight:"5%"}}
             type="checkbox"
             onChange={handlefilter}
-            value="newlaunch"
-            checked={category.includes("newlaunch")}
+            value="LIGHTING & STUDIO"
+            checked={category.includes("LIGHTING & STUDIO")}
           />
-          <label htmlFor="">newlaunch</label>
+          <label htmlFor="">LIGHTING & STUDIO</label>
         </div>
         <div>
           <input
           style={{marginRight:"5%"}}
             type="checkbox"
             onChange={handlefilter}
-            value="boxmeal"
-            checked={category.includes("boxmeal")}
+            value="VIDEO"
+            checked={category.includes("VIDEO")}
           />
-          <label htmlFor="">boxmeal</label>
+          <label htmlFor="">VIDEO</label>
         </div>
         <div>
           <input
           style={{marginRight:"5%"}}
             type="checkbox"
             onChange={handlefilter}
-            value="snacks"
-            checked={category.includes("snacks")}
+            value="AUDIO"
+            checked={category.includes("AUDIO")}
           />
-          <label htmlFor="">snacks</label>
+          <label htmlFor="">AUDIO</label>
         </div>
         <div>
           <input

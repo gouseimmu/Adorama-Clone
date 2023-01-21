@@ -20,12 +20,94 @@ const getSuccess=(payload)=>{
     }
 }
 
+const PostError=()=>{
+    return {
+        type:types.POST_ERROR
+    }
+}
+
+const PostRequest=()=>{
+    return {
+        type:types.POST_REQUEST
+    }
+}
+
+const PostSuccess=(payload)=>{
+    return {
+        type:types.POST_SUCCESS
+    }
+}
+
+const PatchError=()=>{
+    return {
+        type:types.PATCH_ERROR
+    }
+}
+
+const PatchRequest=()=>{
+    return {
+        type:types.PATCH_REQUEST
+    }
+}
+
+const PatchSuccess=(payload)=>{
+    return {
+        type:types.PATCH_SUCCESS
+    }
+}
+
+const DeleteError=()=>{
+    return {
+        type:types.DELETE_ERROR
+    }
+}
+
+const DeleteRequest=()=>{
+    return {
+        type:types.DELETE_REQUEST
+    }
+}
+
+const DeleteSuccess=(payload)=>{
+    return {
+        type:types.DELETE_SUCCESS
+    }
+}
+
 const getData=(params)=>(dispatch)=>{
-    // console.log(params)
+    console.log(params)
     dispatch(getRequest());
-    return axios.get(`https://bfc-i90o.onrender.com/bfc`,params)
-    .then((res)=>dispatch(getSuccess(res.data)))
+    // return axios.get(`https://bfc-i90o.onrender.com/bfc`,params)
+    // Because there is no logic for params in backend;
+    return axios.get(`http://localhost:8080/product`,params)
+    .then((res)=>{
+        console.log(res.data)
+        dispatch(getSuccess(res.data))
+    })
     .catch((err)=>dispatch(getError()));
 }
 
-export {getData}
+const PostData=(obj)=>(dispatch)=>{
+    dispatch(PostRequest());
+    return axios.post("http://localhost:8080/product/addproduct",obj)
+    .then((res)=>{
+      console.log(res)
+    dispatch(PostSuccess());
+      
+    })
+    .catch((err)=>dispatch(PostError()));
+}
+
+const DeleteData=(id)=>(dispatch)=>{
+    console.log(id)
+    dispatch(DeleteRequest());
+    return axios.delete(`http://localhost:8080/product/delete/${id}`,id)
+    .then((res)=>{
+    //   console.log(res)
+    dispatch(DeleteSuccess());
+      
+    })
+    .catch((err)=>dispatch(DeleteError()));
+}
+
+export {getData,PostData,DeleteData}
