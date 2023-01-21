@@ -12,7 +12,7 @@ import axios from 'axios';
 const AdminDashboard = () => {
   const dispatch=useDispatch();
   let data=useSelector((store)=>store.AdminReducer.data);
-
+  // console.log(data[0])
 
   // States for Add Product
   const [title,setTitle]=useState("");
