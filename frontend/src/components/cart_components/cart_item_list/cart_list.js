@@ -21,6 +21,7 @@ export default function Cart_list({cart_data}){
     return (
         <>
         {true && cart_data.map(el=>(<Cart_card hendle_reduce_button={()=>hendlereduce(el._id)} hendle_increase_button={()=>hendleincrease(el._id)}  hendleDelete_cart_item={()=>hendleDelete_cart_item_request(el._id)} item_image={el.productID.image} item_discription={el.productID.title} item_count={el.quantity} item_cost={el.productID.price} />))}
+       
         </>
     )
 }
