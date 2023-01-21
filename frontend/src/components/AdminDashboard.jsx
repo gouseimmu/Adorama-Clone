@@ -1,19 +1,50 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Sorting from './Sorting'
-import {Image,SimpleGrid,Box,Heading} from "@chakra-ui/react";
+import {Image,SimpleGrid,Box,Heading,Button} from "@chakra-ui/react";
 import { useEffect,useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import { getData } from '../Redux/Admin/action';
+import { getData, PostData,DeleteData } from '../Redux/Admin/action';
+import {Modal,ModalOverlay,ModalBody,useDisclosure,ModalContent,ModalFooter,ModalHeader,ModalCloseButton,Text
+,FormLabel,Input} from "@chakra-ui/react"
+import axios from 'axios';
 
 const AdminDashboard = () => {
   const dispatch=useDispatch();
   let data=useSelector((store)=>store.AdminReducer.data);
+
+
+  // States for Add Product
+  const [title,setTitle]=useState("");
+  const [image,setImg]=useState("");
+  const [category,setCategory]=useState("");
+  const [brand,setBrand]=useState("");
+  const [price,setPrice]=useState("");
+
+  const AddProduct=()=>{
+    // console.log("Added")
+    let obj={
+      title,
+      image,
+      category,
+      brand,
+      price,
+      available:true,
+    }
+    // console.log(obj)
+    dispatch(PostData(obj)).then(()=>{
+      alert("Product Added to Data Base")
+      dispatch(getData());
+    })
+  }
+
+  // Login for Sorting
+
   const location=useLocation();
   const [searchParams,setSearchParams]=useSearchParams();
   const [Data,setData]=useState([]);
   const [sort,setsort]=useState("asc");
-  // true for descending and false for ascending
+  
   // console.log(Data)
 
   const handlesort=(e)=>{
@@ -39,7 +70,7 @@ const AdminDashboard = () => {
     if(location||data.length){
       const ProductsData={
         params:{
-          option:searchParams.getAll("category"),
+          category:searchParams.getAll("category"),
           // _sort:sortBy&&"price",
           // _order:sortBy
         }
@@ -67,6 +98,30 @@ const AdminDashboard = () => {
     handlesort();
   },[])
 
+  // Logic Ends for sorting 
+
+  // Overlay 
+
+  const OverlayOne = () => (
+    <ModalOverlay
+      bg='blackAlpha.300'
+      backdropFilter='blur(10px) hue-rotate(90deg)'
+    />
+  )
+
+  const OverlayTwo = () => (
+    <ModalOverlay
+      bg='none'
+      backdropFilter='auto'
+      backdropInvert='80%'
+      backdropBlur='2px'
+    />
+  )
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [overlay, setOverlay] = React.useState(<OverlayOne />)
+
+
 
   return (
     <div>
@@ -81,6 +136,47 @@ const AdminDashboard = () => {
         <input style={{marginRight:"5%"}} type="radio" name="sortBy" id="" value="desc" defaultChecked={sort=="desc"} />
         <label htmlFor="">Descending</label>
       </div>
+      <Box>
+
+        {/* <Button boxShadow="md" mt="5%" colorScheme='messenger'>Add Product</Button> */}
+        <Button
+        mt="5%" colorScheme='messenger'
+        onClick={() => {
+          setOverlay(<OverlayOne />)
+          onOpen()
+        }}
+      >
+        Add Product
+      </Button>
+
+      <Modal isCentered isOpen={isOpen} onClose={onClose}>
+        {overlay}
+        <ModalContent>
+          <ModalHeader>Add Product</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <FormLabel>Title</FormLabel>
+            <Input mb="4%" placeholder="Enter Title of Product" value={title} onChange={(e)=>setTitle(e.target.value)} ></Input>
+            <FormLabel>Image URL</FormLabel>
+            <Input mb="4%" placeholder="Enter Image URL of Product" value={image} onChange={(e)=>setImg(e.target.value)}></Input>
+            <FormLabel >Category</FormLabel>
+            <Input mb="4%" placeholder="Enter Category of Product" value={category} onChange={(e)=>setCategory(e.target.value)}></Input>
+            <FormLabel>Brand</FormLabel>
+            <Input mb="4%" placeholder="Enter Brand of Product" value={brand} onChange={(e)=>setBrand(e.target.value)}></Input>
+            <FormLabel>Price</FormLabel>
+            <Input mb="4%" placeholder="Enter Price of Product" value={price} onChange={(e)=>setPrice(e.target.value)}></Input>
+          </ModalBody>
+          <ModalFooter gap="5%">
+            <Button colorScheme="red" onClick={onClose}>Close</Button>
+            <Button colorScheme="green" onClick={()=>{
+              onClose();
+              AddProduct();
+            }}>Add Product</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+      </Box>
+      
         </div>
         <div id="products" style={{width:"100%",border:"1px solid red",justifyContent:"center"}} >
           <h1>Admin Dashboard</h1>
@@ -92,13 +188,25 @@ const AdminDashboard = () => {
           textAlign="center"
           border="0px solid red">
             {(Data==[]?data:Data).map((el)=>(
-              <Box key={el.id} width="300px" >
+              (el.available?(<Box key={el._id} width="300px" >
                 <Image w={"100%"} src={el.image} h="200px" />
-                  <h2>{el.title}</h2>
-                  <h4>{el.category}</h4>
-                  <h3>{el.price}</h3>
-                  <p>{el.details}</p>
-              </Box>
+                  <h2><b>Title:</b> {el.title}</h2>
+                  <h4><b>Category: </b>{el.category}</h4>
+                  <h3><b>Price:</b> {el.price}</h3>
+                  <p><b>Brand:</b> {el.brand}</p>
+                  <p>Status:{el.available?"true":"false"}</p>
+                  <Button mr="2%" colorScheme="telegram">Edit</Button>
+                  <Button colorScheme={el.available?"red":"green"} onClick={()=>{
+                    el.available=!el.available
+                    console.log(el.available)
+                    }} >Unavailable</Button>
+                  <Button ml="2%" colorScheme="red"
+                  onClick={()=>{
+                    dispatch(DeleteData(el._id))
+                    dispatch(getData());
+                  }} 
+                  >Delete</Button>
+              </Box>):null)
           ))}
           </SimpleGrid>
 
