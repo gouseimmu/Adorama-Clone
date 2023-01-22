@@ -36,8 +36,9 @@ export const Search=()=>{
             placeholder={'Search'}
             fontSize={"sm"}
             color={"grey"}
-             width={["100%","100%","100%","60%"]}
-             ml={["","","",'40%']}
+             width={["96%","96%","96%","60%"]}
+             ml={["2%","2%","2%",'40%']}
+             
             fontWeight={500}
             _placeholder={{
               color: "blackAlpha.300",

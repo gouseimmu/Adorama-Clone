@@ -1,5 +1,6 @@
 import { Button, Text } from "@chakra-ui/react"
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 import "./cart_summery.css"
 
 export default function Cart_summery({cart_subtotal}){
@@ -29,7 +30,12 @@ export default function Cart_summery({cart_subtotal}){
             <br/>
             <br/>
 
-            <div> <Button Style={"display:block;margin:auto"}  size="lg" colorScheme='orange'>Proceed to Checkout</Button></div>
+            <div><Link to="/payment">
+            <Button Style={"display:block;margin:auto"}  size="lg" colorScheme='orange'>
+                Proceed to Checkout
+            </Button>
+            </Link> 
+            </div>
         </div>
     )
 }

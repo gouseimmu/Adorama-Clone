@@ -65,8 +65,12 @@ export const SigninPopover = () => {
                     <Text >Address Book</Text>
                 </Box>
             </Box>
-            <Button _hover={{bg:"skyblue"}} bg={['skyblue']} mt={['15px']} mb={['15px']} pt={['10px']} pb={['10px']} pl={['70px']} pr={['70px']} >LogIn</Button>
-            <Link><Text color={'blue'} mb={['15px']}>Create New Account</Text></Link>
+            <Link to='/login'>
+            <Button _hover={{bg:"skyblue"}} bg={['skyblue']} mt={['15px']} mb={['15px']} pt={['10px']} pb={['10px']} pl={['70px']} pr={['70px']} >
+                LogIn
+            </Button>
+            </Link>
+            <Link to="/signup"><Text color={'blue'} mb={['15px']}>Create New Account</Text></Link>
         </Box>
         
       </PopoverContent>

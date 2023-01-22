@@ -12,11 +12,21 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {   useNavigate } from "react-router-dom";
+import { GET_CART } from "../Redux/cart/cart_actions";
+import {useEffect} from "react"
 
 const Payment = () => {
+
+ 
   const toast = useToast();
   const navigate = useNavigate()
+  // console.log(cart_store)
+  const cart_store=useSelector((store)=>store.cart)
+
+  let sum=0
+  cart_store.cart_data && cart_store.cart_data.map(el=>(sum+=(Number(el.quantity)*Number(el.productID.price))))
   const handleClick=()=>{
     toast({
       title: "Order Placed Successfully.",
@@ -27,6 +37,7 @@ const Payment = () => {
     });
     navigate("/")
   }
+ 
   return (
     <>
       <Box border={"1px solid black"} w={"100%"} height={"6em"} bg={"#004387"}>
@@ -127,7 +138,7 @@ const Payment = () => {
           </Box>
         </Box>
         <Box h={"20em"} w={"40%"} bg={"gainsboro"}>
-          <Box boxShadow={"lg"} w={"100%"} h={"6em"} m={"auto"}>
+          {/* <Box boxShadow={"lg"} w={"100%"} h={"6em"} m={"auto"}>
             <Flex
               alignItems={"flex-start"}
               justifyContent={"space-around"}
@@ -145,7 +156,7 @@ const Payment = () => {
               <Text>10' Background Support System - Cushioned</Text>
               <Text>$89.95</Text>
             </Flex>
-          </Box>
+          </Box> */}
           <Box>
             <Box
               display={"flex"}
@@ -156,7 +167,7 @@ const Payment = () => {
               m={"auto"}
             >
               <Text>Sub-Total </Text>
-              <Text>$89.95</Text>
+              <Text>{sum}</Text>
             </Box>
             <Box
               display={"flex"}
@@ -194,7 +205,7 @@ const Payment = () => {
                 Order Total
               </Text>
               <Text fontSize={"25px"} fontWeight={"bold"}>
-                $89.95
+                {sum}
               </Text>
             </Box>
           </Box>
@@ -394,7 +405,7 @@ const Payment = () => {
             m={"auto"}
           >
             <Text>Sub-Total </Text>
-            <Text>$89.95</Text>
+            <Text>{sum}</Text>
           </Box>
           <Box
             display={"flex"}
@@ -432,7 +443,7 @@ const Payment = () => {
               Order Total
             </Text>
             <Text fontSize={"25px"} fontWeight={"bold"}>
-              $89.95
+              {sum}
             </Text>
           </Box>
         </Box>

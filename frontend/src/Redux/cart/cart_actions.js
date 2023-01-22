@@ -1,11 +1,11 @@
 import {CART_LOAD,CART_GET,CART_ERROR} from "./cart_action_type"
 import axios from "axios"
-let local_details=JSON.parse(localStorage.getItem("details"))
-let token=local_details[0].token
-console.log(token)
+// console.log(token)
 // gat cart
 
 export const GET_CART=()=>(dispatch)=>{
+    let local_details=JSON.parse(localStorage.getItem("details"))
+    let token=local_details[0].token
     dispatch({type:CART_LOAD})
     try{
         axios.get("http://localhost:8080/cart",{headers:{"authorization":token}})
@@ -23,7 +23,8 @@ export const GET_CART=()=>(dispatch)=>{
 
 
  export const Add_TO_CART=(data)=>(dispatch)=>{
-   
+    let local_details=JSON.parse(localStorage.getItem("details"))
+    let token=local_details[0].token
     dispatch({type:CART_LOAD})
     try{
         axios.post("http://localhost:8080/cart/additem",data,{headers:{"authorization":token}})
@@ -38,6 +39,8 @@ export const GET_CART=()=>(dispatch)=>{
 // patch_data={type:"inc"/"dec","productID":""}
 
 export const PATCH_CART=(data)=>(dispatch)=>{
+    let local_details=JSON.parse(localStorage.getItem("details"))
+    let token=local_details[0].token
     dispatch({type:CART_LOAD})
     console.log(data)
     try{
@@ -54,6 +57,8 @@ export const PATCH_CART=(data)=>(dispatch)=>{
 // Delete _item
 // data=productId
 export const Delete_from__CART=(id)=>(dispatch)=>{
+    let local_details=JSON.parse(localStorage.getItem("details"))
+    let token=local_details[0].token
     dispatch({type:CART_LOAD})
     console.log("actions",id)
     
