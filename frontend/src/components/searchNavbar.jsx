@@ -36,8 +36,8 @@ export const Search=()=>{
             placeholder={'Search'}
             fontSize={"sm"}
             color={"grey"}
-             width={["60%"]}
-             ml={['40%']}
+             width={["100%","100%","100%","60%"]}
+             ml={["","","",'40%']}
             fontWeight={500}
             _placeholder={{
               color: "blackAlpha.300",
@@ -49,13 +49,13 @@ export const Search=()=>{
         <Box
           top={"125"}
           right={'0px'}
-          maxH={['500px']}
+          maxH={["200px","200px","200px",'500px']}
           borderBottomRadius={"lg"}
           color={"black"}
           bg={"white"}
           boxShadow={"dark-lg"}
           zIndex={"77"}
-          w={["60%"]}
+          w={["100%","100%","100%","60%"]}
           position={['absolute']}
           overflowY={['scroll']}
           
@@ -74,7 +74,7 @@ export const Search=()=>{
                 align={"center"}
                 border={"2px"}
                 borderColor={"white"}
-                h={"50px"}
+                h={["120px","70px","70px","50px"]}
               >
                 <Image height={"100%"} src={el.image} />
                 <Text>{el.title}</Text>
