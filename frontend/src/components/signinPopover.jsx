@@ -18,9 +18,9 @@ export const SigninPopover = () => {
   return (
     <Popover>
       <PopoverTrigger >
-        <Box border={"1px solid white"} w={['20%']} h={['50%']} display={['flex']} cursor={'pointer'}> 
+        <Box  w={['20%']} h={['50%']} display={['flex']} justifyContent={['center']} alignItems={['center']} cursor={'pointer'}> 
            
-            <Box h={['100%']} border={"1px solid red"} width={['30%']}>
+            <Box h={['100%']}  width={['30%']} display={'flex'} justifyContent={['center']} alignItems={['center']}>
                 <Image m={'0px'} h={['fit-content']}w={['fit-content']} src='https://i.postimg.cc/zvNj2Czk/baseline-perm-identity-white-24dp.png'/>
             </Box>
             <Box display={'flex'} justifyContent={['center']} alignItems={['center']}>
