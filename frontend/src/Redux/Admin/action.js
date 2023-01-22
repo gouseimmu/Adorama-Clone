@@ -75,13 +75,13 @@ const DeleteSuccess=(payload)=>{
 }
 
 const getData=(params)=>(dispatch)=>{
-    console.log(params)
+    // console.log(params)
     dispatch(getRequest());
     // return axios.get(`https://bfc-i90o.onrender.com/bfc`,params)
     // Because there is no logic for params in backend;
     return axios.get(`https://joyous-robe-tick.cyclic.app/product`,params)
     .then((res)=>{
-        console.log(res.data)
+        // console.log(res.data)
         dispatch(getSuccess(res.data))
     })
     .catch((err)=>dispatch(getError()));
@@ -110,4 +110,16 @@ const DeleteData=(id)=>(dispatch)=>{
     .catch((err)=>dispatch(DeleteError()));
 }
 
-export {getData,PostData,DeleteData}
+const PatchData=(obj,id)=>(dispatch)=>{
+    console.log(obj,id)
+    dispatch(PatchRequest());
+    return axios.patch(`https://joyous-robe-tick.cyclic.app/product/update/${id}`,obj)
+    .then((res)=>{
+    //   console.log(res)
+    dispatch(PatchSuccess());
+      
+    })
+    .catch((err)=>dispatch(PatchError()));
+}
+
+export {getData,PostData,DeleteData,PatchData}

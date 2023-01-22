@@ -12,7 +12,8 @@ import { HamburgerForMobileNavbar } from './hamburgerforMobileNavbar';
 const Navbar = () => {
   return (
     <>
-    <Box position={['fixed']} zIndex={['27']}  width={['100%']} height={['130px']} bg={['rgb(0,63,127)']}>
+    {/* height=130px */}
+    <Box position={['fixed']} zIndex={['27']}  width={['100%']} height={['00px']} bg={['rgb(0,63,127)']}>
       <Box borderBottom={['0.5px solid grey']} w={['100%']} h={['65%']} display={['none','none','flex',"flex"]}>
         <Box   h={['100%']} width={["","20%","20%",'50%']} >
           
