@@ -4,10 +4,10 @@ const productRoute=express.Router()
 
 productRoute.get("/",async(req,res)=>{
     const category=req.query.category;
-    console.log(typeof(category))
-    console.log(category)
-    console.log("query:",req.query)
-    console.log("Body:",req.body)
+    // console.log(typeof(category))
+    // console.log(category)
+    // console.log("query:",req.query)
+    // console.log("Body:",req.body)
     // try {
     //     let allProduct=await ProductModel.find()
     //     console.log("You got the product")
@@ -24,9 +24,10 @@ productRoute.get("/",async(req,res)=>{
             let arr=[];
             for(let i=0;i<category.length;i++){
                 const post1=await ProductModel.find({category:category[i]});
-                arr.push(post1);
+                // arr.push(post1);
+                post1.map((el)=>arr.push(el));
             }
-            console.log(arr.length)
+            // console.log(arr.length)
             res.send(arr);
         }else{
             const post=await ProductModel.find();

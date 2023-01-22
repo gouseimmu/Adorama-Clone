@@ -128,26 +128,7 @@ const Sorting = () => {
           />
           <label htmlFor="">AUDIO</label>
         </div>
-        <div>
-          <input
-          style={{marginRight:"5%"}}
-            type="checkbox"
-            onChange={handlefilter}
-            value="stayhomespecial"
-            checked={category.includes("stayhomespecial")}
-          />
-          <label htmlFor="">stayhomespecial</label>
-        </div>
-        <div>
-          <input
-          style={{marginRight:"5%"}}
-            type="checkbox"
-            onChange={handlefilter}
-            value="beverages"
-            checked={category.includes("beverages")}
-          />
-          <label htmlFor="">beverages</label>
-        </div>
+       
       </div>
       {/* <Heading as="h3" size="md" mt="5%" style={{ marginBottom: "5%" }}>Sorting Component</Heading>
       <div onChange={handlesort} style={{textAlign:"left",marginLeft:"20%"}}  >
