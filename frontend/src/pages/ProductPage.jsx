@@ -302,7 +302,8 @@ const ProductPage = () => {
 
                                         {/* <div style={{ fontSize: "35px" }}>{el.price}</div> */}
 
-                                        <button
+                                        <button 
+                                        disabled={!el.available}
                                             style={{
                                                 backgroundColor: "rgb(228, 112, 70)",
                                                 color: "white",

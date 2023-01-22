@@ -130,17 +130,18 @@ const AdminDashboard = () => {
       backdropFilter='auto'
       backdropInvert='80%'
       backdropBlur='2px'
-    />
+      />
   )
-
+  
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [overlay, setOverlay] = React.useState(<OverlayOne />)
 
-
-
+  
+  
   return (
     <div>
-      <div id="main" style={{display:"flex",marginTop:"5%"}} >
+      <Heading textAlign={"center"} mt="2%" >Admin Dashboard</Heading>
+      <div id="main" style={{display:"flex"}} >
         <div id="filter" style={{width:"300px"}} >
           <Sorting/>
           <Heading as="h3" size="md" mt="5%" style={{ marginBottom: "5%" }}>Sorting Component</Heading>
@@ -193,16 +194,16 @@ const AdminDashboard = () => {
       </Box>
       
         </div>
-        <div id="products" style={{width:"100%",justifyContent:"center"}} >
-          <h1>Admin Dashboard</h1>
+        <div id="products" style={{width:"100%",justifyContent:"center",marginTop:"5%"}} >
           {/* <div style={{display:"grid",gridTemplateColumns: }} > */}
           <SimpleGrid
-          minChildWidth="300px"
-          spacing="50px"
+          
+          minChildWidth="350px"
+          spacing="80px"
           marginTop="30px"
           textAlign="center">
             {(Data==[]?data:Data).map((el)=>(
-              (el.available?(<Box key={el._id} width="300px" >
+              (el.available?(<Box key={el._id} width="300px" height="450px" boxShadow="lg" borderRadius="25px" padding="3%" >
                 <Image w={"100%"} src={el.image} h="200px" />
                   <h2><b>Title:</b> {el.title}</h2>
                   <h4><b>Category: </b>{el.category}</h4>
