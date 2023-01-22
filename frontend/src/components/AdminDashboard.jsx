@@ -4,7 +4,7 @@ import Sorting from './Sorting'
 import {Image,SimpleGrid,Box,Heading,Button} from "@chakra-ui/react";
 import { useEffect,useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import { getData, PostData,DeleteData } from '../Redux/Admin/action';
+import { getData, PostData,DeleteData, PatchData } from '../Redux/Admin/action';
 import {Modal,ModalOverlay,ModalBody,useDisclosure,ModalContent,ModalFooter,ModalHeader,ModalCloseButton,Text
 ,FormLabel,Input} from "@chakra-ui/react"
 import axios from 'axios';
@@ -13,8 +13,8 @@ import {Link} from "react-router-dom"
 const AdminDashboard = () => {
   const dispatch=useDispatch();
   let data=useSelector((store)=>store.admin.data);
-
-
+  const [bool,setbool]=useState(false);
+ 
   // States for Add Product
   const [title,setTitle]=useState("");
   const [image,setImg]=useState("");
@@ -36,6 +36,20 @@ const AdminDashboard = () => {
     dispatch(PostData(obj)).then(()=>{
       alert("Product Added to Data Base")
       dispatch(getData());
+      
+    })
+  }
+
+  const handleAvailability=(id,available)=>{
+    let payload={
+      available:!available
+    }
+    // console.log(payload,id);
+    dispatch(PatchData(payload,id)).then(()=>{
+      alert(`One item's status with id ${id} has been changed`)
+      dispatch(getData());
+      setbool((pre)=>!pre);
+      window.location.reload(false);
     })
   }
 
@@ -93,7 +107,7 @@ const AdminDashboard = () => {
       // }
     }
   //  console.log(location.search)
-  }, [dispatch,location.search,data.length]);
+  }, [dispatch,location.search,data.length,bool]);
 
   useEffect(()=>{
     handlesort();
@@ -127,7 +141,7 @@ const AdminDashboard = () => {
   return (
     <div>
       <div id="main" style={{display:"flex",marginTop:"5%"}} >
-        <div id="filter" style={{width:"300px",border:"1px solid red"}} >
+        <div id="filter" style={{width:"300px"}} >
           <Sorting/>
           <Heading as="h3" size="md" mt="5%" style={{ marginBottom: "5%" }}>Sorting Component</Heading>
       <div onChange={handlesort} style={{textAlign:"left",marginLeft:"20%"}}  >
@@ -179,15 +193,14 @@ const AdminDashboard = () => {
       </Box>
       
         </div>
-        <div id="products" style={{width:"100%",border:"1px solid red",justifyContent:"center"}} >
+        <div id="products" style={{width:"100%",justifyContent:"center"}} >
           <h1>Admin Dashboard</h1>
           {/* <div style={{display:"grid",gridTemplateColumns: }} > */}
           <SimpleGrid
-          minChildWidth="250px"
-          spacing="40px"
+          minChildWidth="300px"
+          spacing="50px"
           marginTop="30px"
-          textAlign="center"
-          border="0px solid red">
+          textAlign="center">
             {(Data==[]?data:Data).map((el)=>(
               (el.available?(<Box key={el._id} width="300px" >
                 <Image w={"100%"} src={el.image} h="200px" />
@@ -195,19 +208,41 @@ const AdminDashboard = () => {
                   <h4><b>Category: </b>{el.category}</h4>
                   <h3><b>Price:</b> {el.price}</h3>
                   <p><b>Brand:</b> {el.brand}</p>
-                  <p>Status:{el.available?"true":"false"}</p>
+                  {/* <p>Status:{el.available?"true":"false"}</p> */}
                   <Link to={`/admin/edit/${el._id}`} ><Button mr="2%" colorScheme="telegram">Edit</Button></Link>
-                  <Button colorScheme={el.available?"red":"green"} onClick={()=>{
-                    el.available=!el.available
+
+                  <Button colorScheme={el.available?"yellow":"green"} value="Available" onClick={(e)=>{
+                    // el.available=!el.available
                     console.log(el.available)
-                    }} >Unavailable</Button>
+                    handleAvailability(el._id,el.available)
+                    }} >{el.available?"Disable":"Enable"}</Button>
+
                   <Button ml="2%" colorScheme="red"
                   onClick={()=>{
                     dispatch(DeleteData(el._id))
                     dispatch(getData());
                   }} 
                   >Delete</Button>
-              </Box>):null)
+              </Box>):(
+                <Box key={el._id} width="300px" >
+                  <Image w={"100%"} src={el.image} h="200px" />
+                  <h2><b>Title:</b> {el.title}</h2>
+                  <h4><b>Category: </b>{el.category}</h4>
+                  <h3><b>Price:</b> {el.price}</h3>
+                  <p><b>Brand:</b> {el.brand}</p>
+                  <Button colorScheme={el.available?"yellow":"green"} value="Available" onClick={(e)=>{
+                    // el.available=!el.available
+                    console.log(el.available)
+                    handleAvailability(el._id,el.available)
+                    }} >{el.available?"Disable":"Enable"}</Button>
+                    <Button ml="2%" colorScheme="red"
+                  onClick={()=>{
+                    dispatch(DeleteData(el._id))
+                    dispatch(getData());
+                  }} 
+                  >Delete</Button>
+                </Box>)
+              )
           ))}
           </SimpleGrid>
 
