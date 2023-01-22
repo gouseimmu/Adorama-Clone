@@ -16,7 +16,7 @@ const ForgotPassword = () => {
       password:password
     }
 
-    fetch("http://localhost:8080/user/update",{
+    fetch("https://joyous-robe-tick.cyclic.app/user/update",{
       method:"PATCH",
       body:JSON.stringify(payload),
       headers:{
