@@ -8,8 +8,8 @@ import Login from '../pages/Login'
 import Payment from '../pages/Payment'
 import Signup from '../pages/Signup'
 import SingleProduct from '../pages/SingleProduct'
-import AddProduct from './AddProduct'
 import AdminDashboard from './AdminDashboard'
+import EditProduct from './EditProduct'
 import Product from "./product/Product"
 const MainRoutes = () => {
   return (
@@ -30,7 +30,7 @@ const MainRoutes = () => {
            <Route path='/product' element={<Product/>}/>
 
 
-            <Route path="/add" element={<AddProduct/>} />
+            <Route path="/admin/edit/:id" element={<EditProduct/>} />
  
 
           

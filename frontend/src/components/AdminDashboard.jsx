@@ -8,6 +8,7 @@ import { getData, PostData,DeleteData } from '../Redux/Admin/action';
 import {Modal,ModalOverlay,ModalBody,useDisclosure,ModalContent,ModalFooter,ModalHeader,ModalCloseButton,Text
 ,FormLabel,Input} from "@chakra-ui/react"
 import axios from 'axios';
+import {Link} from "react-router-dom"
 
 const AdminDashboard = () => {
   const dispatch=useDispatch();
@@ -125,7 +126,7 @@ const AdminDashboard = () => {
 
   return (
     <div>
-      <div id="main" style={{display:"flex"}} >
+      <div id="main" style={{display:"flex",marginTop:"5%"}} >
         <div id="filter" style={{width:"300px",border:"1px solid red"}} >
           <Sorting/>
           <Heading as="h3" size="md" mt="5%" style={{ marginBottom: "5%" }}>Sorting Component</Heading>
@@ -195,7 +196,7 @@ const AdminDashboard = () => {
                   <h3><b>Price:</b> {el.price}</h3>
                   <p><b>Brand:</b> {el.brand}</p>
                   <p>Status:{el.available?"true":"false"}</p>
-                  <Button mr="2%" colorScheme="telegram">Edit</Button>
+                  <Link to={`/admin/edit/${el._id}`} ><Button mr="2%" colorScheme="telegram">Edit</Button></Link>
                   <Button colorScheme={el.available?"red":"green"} onClick={()=>{
                     el.available=!el.available
                     console.log(el.available)
