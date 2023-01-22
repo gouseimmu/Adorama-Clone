@@ -23,6 +23,7 @@ import { FcStatistics } from "react-icons/fc";
 import {IoServerOutline } from "react-icons/io5";
 import { RiMoneyDollarBoxLine } from "react-icons/ri";
 import { GiPathDistance } from "react-icons/gi";
+import { Link } from "react-router-dom";
 export default function ProductButton(){
     const { isOpen, onOpen, onClose } = useDisclosure();
     return(
@@ -54,8 +55,11 @@ export default function ProductButton(){
                   }}
                 >
                   <Box alignItems={"center"}>
-                    
+                    <Link to="/product">
+
                     <Text ml={6}>Photography</Text>
+                    </Link>
+                    
                   </Box>
                 </MenuItem>
                 <MenuItem
@@ -66,8 +70,9 @@ export default function ProductButton(){
                   }}
                 >
                   <Box alignItems={"center"}>
-                    
+                    <Link to='/product'>
                     <Text ml={6}>Lighting & Studio</Text>
+                    </Link>
                   </Box>
                 </MenuItem>
                 <MenuItem
@@ -78,8 +83,9 @@ export default function ProductButton(){
                   }}
                 >
                   <Box alignItems={"center"}>
-                    
+                    <Link to="/product">
                     <Text ml={6}>Computers</Text>
+                    </Link>
                   </Box>
                 </MenuItem>
                 <MenuItem
@@ -90,8 +96,9 @@ export default function ProductButton(){
                   }}
                 >
                   <Box alignItems={"center"}>
-                   
+                   <Link to="/product">
                     <Text ml={6}>Home Electronics</Text>
+                   </Link>
                   </Box>
                 </MenuItem>
                 <MenuItem
@@ -102,8 +109,9 @@ export default function ProductButton(){
                   }}
                 >
                   <Box alignItems={"center"}>
-                   
+                   <Link to="/product">
                     <Text ml={6}>Musical Instruments</Text>
+                   </Link>
                   </Box>
                 </MenuItem>
                 <MenuItem
@@ -114,8 +122,10 @@ export default function ProductButton(){
                   }}
                 >
                      <Box alignItems={"center"}>
-                    
+                    <Link to="/product">
+
                     <Text ml={6}>Drones</Text>
+                    </Link>
                   </Box>
                   
                 </MenuItem>
@@ -127,8 +137,10 @@ export default function ProductButton(){
                   }}
                 >
                      <Box alignItems={"center"}>
-                   
+                    <Link to="/product">
+
                     <Text ml={6}>Video</Text>
+                    </Link>
                   </Box>
                   
                 </MenuItem>

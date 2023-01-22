@@ -29,7 +29,9 @@ const Navbar = () => {
           
           <SigninPopover />
           <Box  w={['7%']} h={['50%']}> 
+          <Link to='/cart'>
               <Image src='https://i.postimg.cc/BnwcxWds/baseline-shopping-cart-white-24dp.png'm={'0px'} h={['fit-content']}w={['fit-content']}/>
+          </Link>
           </Box>
         </Box>
       </Box>
