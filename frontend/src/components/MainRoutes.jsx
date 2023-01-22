@@ -6,6 +6,7 @@ import ForgotPassword from '../pages/ForgotPassword'
 import Homepage from '../pages/Homepage'
 import Login from '../pages/Login'
 import Payment from '../pages/Payment'
+import ProductPage from '../pages/ProductPage'
 import Signup from '../pages/Signup'
 import SingleProduct from '../pages/SingleProduct'
 import AdminDashboard from './AdminDashboard'
@@ -32,7 +33,7 @@ const MainRoutes = () => {
 
             <Route path="/admin/edit/:id" element={<EditProduct/>} />
  
-
+             <Route path='/products' element={<ProductPage/>} />
           
 
         </Routes>

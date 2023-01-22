@@ -28,6 +28,7 @@ export const SigninPopover = () => {
         name="SignIn"
     }
   return (
+    
     <Popover>
       <PopoverTrigger >
         <Box  w={['20%']} h={['50%']} display={['flex']} justifyContent={['center']} alignItems={['center']} cursor={'pointer'}> 
