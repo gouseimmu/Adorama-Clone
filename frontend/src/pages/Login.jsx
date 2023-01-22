@@ -55,7 +55,7 @@ const Login = () => {
       <div id={styles.Box1}>
         <div id={styles.sub1}>
           <div id={styles.name}>
-            <h1>Adorama</h1>
+           <h1><Link to="/">Adorama </Link> </h1> 
           </div>
           <div id={styles.new}>
             <h2>New Customer ?</h2>

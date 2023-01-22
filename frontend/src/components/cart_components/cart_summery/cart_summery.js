@@ -25,7 +25,7 @@ export default function Cart_summery({cart_subtotal}){
             <br/>
             <div className="final_total" >
                 <Text fontSize="2xl" >Order Total</Text>
-                <Text fontSize="2xl"> &#8377;{sum+45.15}</Text>
+                <Text fontSize="2xl"> &#8377;{Math.floor(sum)+45.15}</Text>
             </div>
             <br/>
             <br/>
