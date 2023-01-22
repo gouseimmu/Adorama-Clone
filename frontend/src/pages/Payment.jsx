@@ -16,6 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {   useNavigate } from "react-router-dom";
 import { GET_CART } from "../Redux/cart/cart_actions";
 import {useEffect} from "react"
+import Footer from "../components/Footer";
 
 const Payment = () => {
 
@@ -466,6 +467,8 @@ const Payment = () => {
           </Text>
         </Box>
       </Box>
+<Footer/>
+
     </>
   );
 };

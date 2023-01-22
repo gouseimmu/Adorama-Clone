@@ -55,7 +55,7 @@ const Sorting = () => {
   }, [category,setSearchParams,sort]);
 
   return (
-    <div style={{ width: "300px",marginTop:"55%" }}>
+    <div style={{ width: "300px",marginTop:"25%" }}>
       <Heading as="h3" size="md" mt="5%" style={{ marginBottom: "5%" }}>Filter Component</Heading>
       <div style={{textAlign:"left",marginLeft:"20%"}} >
         <div>

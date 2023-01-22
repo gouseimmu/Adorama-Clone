@@ -11,21 +11,21 @@ export default function Cart_summery({cart_subtotal}){
         <div className="odder_summery_main" >
             <div className="summer_sub_info">
                 <span>subtotal</span>
-                <span>{sum} &#8377;</span>
+                <span>&#8377;{sum} </span>
             </div>
             <div className="summer_sub_info">
                 <span>shipping</span>
-                <span>45.15 &#8377;</span>
+                <span> &#8377;45.15</span>
             </div>
             <div className="summer_sub_info">
                 <span>Taxes</span>
-                <span>0.00 &#8377;</span>
+                <span>&#8377;0.00 </span>
             </div>
             <hr/>
             <br/>
             <div className="final_total" >
-                <Text fontSize="2xl" >Oreder Total</Text>
-                <Text fontSize="2xl">{sum+45.15} &#8377;</Text>
+                <Text fontSize="2xl" >Order Total</Text>
+                <Text fontSize="2xl"> &#8377;{sum+45.15}</Text>
             </div>
             <br/>
             <br/>
