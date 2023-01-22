@@ -11,7 +11,7 @@ import axios from 'axios';
 
 const AdminDashboard = () => {
   const dispatch=useDispatch();
-  let data=useSelector((store)=>store.AdminReducer.data);
+  let data=useSelector((store)=>store.admin.data);
 
 
   // States for Add Product

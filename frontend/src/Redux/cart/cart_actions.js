@@ -8,7 +8,7 @@ export const GET_CART=()=>(dispatch)=>{
     let token=local_details[0].token
     dispatch({type:CART_LOAD})
     try{
-        axios.get("http://localhost:8080/cart",{headers:{"authorization":token}})
+        axios.get("https://joyous-robe-tick.cyclic.app/cart",{headers:{"authorization":token}})
         .then(res=>(dispatch({type:CART_GET,payload:res.data})))
         .catch(err=>(dispatch({type:CART_ERROR})))
     }
@@ -27,7 +27,7 @@ export const GET_CART=()=>(dispatch)=>{
     let token=local_details[0].token
     dispatch({type:CART_LOAD})
     try{
-        axios.post("http://localhost:8080/cart/additem",data,{headers:{"authorization":token}})
+        axios.post("https://joyous-robe-tick.cyclic.app/cart/additem",data,{headers:{"authorization":token}})
         .then(res=>(dispatch(GET_CART())))
         .catch(err=>(dispatch({type:CART_ERROR})))
     }
@@ -44,7 +44,7 @@ export const PATCH_CART=(data)=>(dispatch)=>{
     dispatch({type:CART_LOAD})
     console.log(data)
     try{
-        axios.patch("http://localhost:8080/cart/update",data,{headers:{"authorization":token}})
+        axios.patch("https://joyous-robe-tick.cyclic.app/cart/update",data,{headers:{"authorization":token}})
         .then(res=>(dispatch(GET_CART())))
         .catch(err=>(dispatch({type:CART_ERROR})))
     }
@@ -63,7 +63,7 @@ export const Delete_from__CART=(id)=>(dispatch)=>{
     console.log("actions",id)
     
     try{
-        axios.delete(`http://localhost:8080/cart/delete/${id}`,{headers:{"authorization":token}})
+        axios.delete(`https://joyous-robe-tick.cyclic.app/cart/delete/${id}`,{headers:{"authorization":token}})
         .then(res=>(dispatch(GET_CART())))
         .catch(err=>(dispatch({type:CART_ERROR})))
     }

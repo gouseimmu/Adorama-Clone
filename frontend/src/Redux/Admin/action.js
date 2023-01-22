@@ -79,7 +79,7 @@ const getData=(params)=>(dispatch)=>{
     dispatch(getRequest());
     // return axios.get(`https://bfc-i90o.onrender.com/bfc`,params)
     // Because there is no logic for params in backend;
-    return axios.get(`http://localhost:8080/product`,params)
+    return axios.get(`https://joyous-robe-tick.cyclic.app/product`,params)
     .then((res)=>{
         console.log(res.data)
         dispatch(getSuccess(res.data))
@@ -89,7 +89,7 @@ const getData=(params)=>(dispatch)=>{
 
 const PostData=(obj)=>(dispatch)=>{
     dispatch(PostRequest());
-    return axios.post("http://localhost:8080/product/addproduct",obj)
+    return axios.post("https://joyous-robe-tick.cyclic.app/product/addproduct",obj)
     .then((res)=>{
       console.log(res)
     dispatch(PostSuccess());
@@ -101,7 +101,7 @@ const PostData=(obj)=>(dispatch)=>{
 const DeleteData=(id)=>(dispatch)=>{
     console.log(id)
     dispatch(DeleteRequest());
-    return axios.delete(`http://localhost:8080/product/delete/${id}`,id)
+    return axios.delete(`https://joyous-robe-tick.cyclic.app/product/delete/${id}`,id)
     .then((res)=>{
     //   console.log(res)
     dispatch(DeleteSuccess());

@@ -10,7 +10,7 @@ export const Search=()=>{
 
     const getData = async (text) => {
       
-        await axios.get(`http://localhost:8080/product/search/${text}`)
+        await axios.get(`https://joyous-robe-tick.cyclic.app/product/search/${text}`)
         .then((res)=>setresult(res.data))
         
       };

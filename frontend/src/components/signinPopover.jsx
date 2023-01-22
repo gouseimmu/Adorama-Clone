@@ -13,8 +13,20 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export const SigninPopover = () => {
+    const navigate=useNavigate()
+    const isAuth=JSON.parse(localStorage.getItem("details"))||[]
+    if(isAuth[1]!==undefined){
+
+        var name=isAuth[1].name
+        console.log(name)
+    }
+    const handleClick=()=>{
+        localStorage.clear("details")
+        navigate("/")
+        name="SignIn"
+    }
   return (
     <Popover>
       <PopoverTrigger >
@@ -24,7 +36,7 @@ export const SigninPopover = () => {
                 <Image m={'0px'} h={['fit-content']}w={['fit-content']} src='https://i.postimg.cc/zvNj2Czk/baseline-perm-identity-white-24dp.png'/>
             </Box>
             <Box display={'flex'} justifyContent={['center']} alignItems={['center']}>
-                <Text color={'white'} textAlign={'center'}>SignIn</Text>
+                <Text color={'white'} textAlign={'center'}>{name?name:"SignIn"}</Text>
             </Box>
 
         </Box>
@@ -66,11 +78,13 @@ export const SigninPopover = () => {
                 </Box>
             </Box>
             <Link to='/login'>
-            <Button _hover={{bg:"skyblue"}} bg={['skyblue']} mt={['15px']} mb={['15px']} pt={['10px']} pb={['10px']} pl={['70px']} pr={['70px']} >
-                LogIn
+            <Button onClick={handleClick} _hover={{bg:"skyblue"}} bg={['skyblue']} mt={['15px']} mb={['15px']} pt={['10px']} pb={['10px']} pl={['70px']} pr={['70px']} >
+                {name ? "Logout" :"Login"}
             </Button>
             </Link>
             <Link to="/signup"><Text color={'blue'} mb={['15px']}>Create New Account</Text></Link>
+            <Link to="/admin"><Text color={'blue'} mb={['15px']}>For Admin Only</Text></Link>
+
         </Box>
         
       </PopoverContent>
