@@ -6,6 +6,7 @@ import ForgotPassword from '../pages/ForgotPassword'
 import Homepage from '../pages/Homepage'
 import Login from '../pages/Login'
 import Payment from '../pages/Payment'
+import ProductPage from '../pages/ProductPage'
 import Signup from '../pages/Signup'
 import SingleProduct from '../pages/SingleProduct'
 import AddProduct from './AddProduct'
@@ -32,7 +33,7 @@ const MainRoutes = () => {
 
             <Route path="/add" element={<AddProduct/>} />
  
-
+             <Route path='/products' element={<ProductPage/>} />
           
 
         </Routes>

@@ -17,7 +17,7 @@ const Login = () => {
       password,
     };
 
-    fetch("http://localhost:8080/user/login", {
+    fetch("https://joyous-robe-tick.cyclic.app/user/login", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {

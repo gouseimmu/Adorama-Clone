@@ -9,7 +9,7 @@ const Sorting = () => {
   const dispatch=useDispatch();
   const data=useSelector((store)=>{
     // console.log(store)
-   return  store.AdminReducer.data
+   return  store.admin.data
   });
   // console.log(data)
 

@@ -26,7 +26,7 @@ const handelSubmit = (e)=>{
 
  
 
-  fetch("http://localhost:8080/user/signup",{
+  fetch("https://joyous-robe-tick.cyclic.app/user/signup",{
     method:"POST",
     body:JSON.stringify(payload),
     headers:{

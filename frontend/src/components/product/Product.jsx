@@ -3,10 +3,17 @@ import "../product/product.css"
 import Best_seller from "../product/best_seller/top_deles"
 import News_review from "../product/news_review/watch"
 import Shop_by_brands from "../product/shop_by_brands/brand"
+import Navbar from '../Navbar'
+import Footer from '../Footer'
+import { Link } from 'react-router-dom'
 
 const product = () => {
     return (
         <>
+            <div style={{ paddingBottom: "130px" }}>
+
+                <Navbar/>
+            </div>
             <div className='pro1'>
 
                 <div className='pro2'>
@@ -23,90 +30,115 @@ const product = () => {
             <div className='pro4'>
                 <div className='pro5'>
                     <div className='pro6' >
+                        <Link to="/products">
                         <div className='circle'>
                             <div className='imgg'>
                                 <img src="https://www.adorama.com/images/Large/ipczs80s.jpg" alt="sony" />
                             </div>
                         </div>
                         <div className='spa'>
+
                             <span>Cameras</span>
                         </div>
+                        </Link>
                     </div>
                     <div className='pro6' >
+                        <Link to="/products">
+
                         <div className='circle'>
-                        <div className='imgg'>
-                            <img src="https://www.adorama.com/images/cms/15616lenses_47765.jpg" alt="sony" />
-                        </div>
+                            
+                            <div className='imgg'>
+                                <img src="https://www.adorama.com/images/cms/15616lenses_47765.jpg" alt="sony" />
+                            </div>
                         </div>
                         <div className='spa'>
                             <span>Lenses</span>
                         </div>
+                        </Link>
                     </div>
                     <div className='pro6' >
+                    <Link to="/products">
+                            
                         <div className='circle'>
-                        <div className='imgg'>
-                            <img src="https://www.adorama.com/images/Large/we4700.jpg" alt="sony" />
-                        </div>
+                            <div className='imgg'>
+                                <img src="https://www.adorama.com/images/Large/we4700.jpg" alt="sony" />
+                            </div>
                         </div>
                         <div className='spa'>
                             <span>Lighting & Studio</span>
                         </div>
+                            </Link>
                     </div>
                     <div className='pro6' >
+                    <Link to="/products">
+                            
                         <div className='circle'>
-                        <div className='imgg'>
-                            <img src="https://www.adorama.com/images/Large/3pactth_1.jpg" alt="sony" />
-                        </div>
+                            <div className='imgg'>
+                                <img src="https://www.adorama.com/images/Large/3pactth_1.jpg" alt="sony" />
+                            </div>
                         </div>
                         <div className='spa'>
                             <span>Tripods & Supports</span>
                         </div>
+                            </Link>
                     </div>
                     <div className='pro6' >
+                    <Link to="/products">
+                            
                         <div className='circle'>
-                        <div className='imgg'>
-                            <img src="https://www.adorama.com/images/Large/icabgr10_1.jpg" alt="sony" />
-                        </div>
+                            <div className='imgg'>
+                                <img src="https://www.adorama.com/images/Large/icabgr10_1.jpg" alt="sony" />
+                            </div>
                         </div>
                         <div className='spa'>
                             <span>Camera Accessories</span>
                         </div>
+                            </Link>
                     </div>
                     <div className='pro6' >
+                    <Link to="/products">
+                            
                         <div className='circle'>
-                        <div className='imgg'>
-                            <img src="https://www.adorama.com/images/Large/iommc20.jpg" alt="sony" />
-                        </div>
+                            <div className='imgg'>
+                                <img src="https://www.adorama.com/images/Large/iommc20.jpg" alt="sony" />
+                            </div>
                         </div>
                         <div className='spa'>
                             <span>Lens Accessories</span>
                         </div>
+                            </Link>
                     </div>
                     <div className='pro6' >
+                    <Link to="/products">
+                            
                         <div className='circle'>
-                        <div className='imgg'>
-                            <img src="https://www.adorama.com/images/Large/kkp40036pp.jpg" alt="sony" />
-                        </div>
+                            <div className='imgg'>
+                                <img src="https://www.adorama.com/images/Large/kkp40036pp.jpg" alt="sony" />
+                            </div>
                         </div>
                         <div className='spa'>
                             <span>Film & Darkroom Equipment</span>
                         </div>
+                            </Link>
                     </div>
                     <div className='pro6' >
+                    <Link to="/products">
+                            
                         <div className='circle'>
-                        <div className='imgg'>
-                            <img src="https://www.adorama.com/images/cms/15616Lens_Filter_37689.jpg" alt="sony" />
-                        </div>
+                            <div className='imgg'>
+                                <img src="https://www.adorama.com/images/cms/15616Lens_Filter_37689.jpg" alt="sony" />
+                            </div>
                         </div>
                         <div className='spa'>
                             <span>Lens Filters</span>
                         </div>
+                            </Link>
                     </div>
                     <div className='pro6' >
                         <div className='circle'>
-                        <div className='imgg'>
-                            <img src="https://www.adorama.com/images/cms/15616underwater_50466.jpg" alt="sony" />
-                        </div>
+                            <div className='imgg'>
+                                <img src="https://www.adorama.com/images/cms/15616underwater_50466.jpg" alt="sony" />
+                            </div>
                         </div>
                         <div className='spa'>
                             <span>Underwater Photography</span>
@@ -114,9 +146,9 @@ const product = () => {
                     </div>
                     <div className='pro6' >
                         <div className='circle'>
-                        <div className='imgg'>
-                            <img src="https://www.adorama.com/images/cms/15616mobile_photography_89004.jpg" alt="sony" />
-                        </div>
+                            <div className='imgg'>
+                                <img src="https://www.adorama.com/images/cms/15616mobile_photography_89004.jpg" alt="sony" />
+                            </div>
                         </div>
                         <div className='spa'>
                             <span>Mobile Photography</span>
@@ -124,9 +156,9 @@ const product = () => {
                     </div>
                     <div className='pro6' >
                         <div className='circle'>
-                        <div className='imgg'>
-                            <img src="https://www.adorama.com/images/cms/15616frames_53390.jpg" alt="sony" />
-                        </div>
+                            <div className='imgg'>
+                                <img src="https://www.adorama.com/images/cms/15616frames_53390.jpg" alt="sony" />
+                            </div>
                         </div>
                         <div className='spa'>
                             <span>Photo Albums, Frames & Storage</span>
@@ -134,9 +166,9 @@ const product = () => {
                     </div>
                     <div className='pro6' >
                         <div className='circle'>
-                        <div className='imgg'>
-                            <img src="https://www.adorama.com/images/cms/15616backpacks_10788.jpg" alt="sony" />
-                        </div>
+                            <div className='imgg'>
+                                <img src="https://www.adorama.com/images/cms/15616backpacks_10788.jpg" alt="sony" />
+                            </div>
                         </div>
                         <div className='spa'>
                             <span>Photography Bags & Cases</span>
@@ -144,9 +176,9 @@ const product = () => {
                     </div>
                     <div className='pro6' >
                         <div className='circle'>
-                        <div className='imgg'>
-                            <img src="https://www.adorama.com/images/cms/15616memory_card_photography_78143.jpg" alt="sony" />
-                        </div>
+                            <div className='imgg'>
+                                <img src="https://www.adorama.com/images/cms/15616memory_card_photography_78143.jpg" alt="sony" />
+                            </div>
                         </div>
                         <div className='spa'>
                             <span>Memory Cards</span>
@@ -192,7 +224,7 @@ const product = () => {
                 <br />
                 <span>Serious & entry level photographers use a medley of accessories, modifiers, mounts and storage gear to get the very best from their shots. Adorama offers a wide selection of photography supplies for a variety of needs. Our photography cameras include models from Canon, Nikon, Sony, and other trusted brands.
                     <br />
-                    
+
                     Take modern, high resolution images with DSLR and Mirrorless models or keep it old school with a vintage, classic film camera, and find high-quality lenses to help you create unique shots. Browse our huge selection of lenses and accessories from tripods to battery packs, to help you progress your photography journey.
                 </span>
                 <br />
@@ -221,13 +253,13 @@ const product = () => {
 
             <div className='rec'>
                 <div>
-                <h1>Recently Viewed Items</h1>
+                    <h1>Recently Viewed Items</h1>
                 </div>
-               <div className='cl'>
-               <p >Clear History</p>
-               </div>
+                <div className='cl'>
+                    <p >Clear History</p>
+                </div>
             </div>
-           
+            <Footer/>
 
         </>
 

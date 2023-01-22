@@ -10,12 +10,17 @@ import Top_deal from '../components/Home_component/top_deles/top_deles'
 import WatchCard from '../components/Home_component/watch_inspire/catchcard'
 import Watch from '../components/Home_component/watch_inspire/watch'
 import add1 from "../Homepage_Images/add1.webp"
-
+import Navbar from "../components/Navbar"
+import Footer from '../components/Footer'
 
 
 const Homepage = () => {
   return (
-    <div Style={"background:#F3F3F3"}>
+<>
+    <div style={{paddingBottom:"130px" }}>
+      <Navbar/>
+    </div>
+    <div  Style={"background:#F3F3F3 "}>
       <Heroslider/>
       <br/>
       <br/>
@@ -61,6 +66,8 @@ const Homepage = () => {
       <br/>
 
     </div>
+    <Footer/>
+    </>
   )
 }
 
