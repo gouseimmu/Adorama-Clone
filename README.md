@@ -48,3 +48,9 @@ All products added in cart will be shown here.
 ![](https://i.ibb.co/wB2ZRMm/Screenshot-2023-01-23-105054.png)
 
 User can pay either using cod or online method.
+
+6. Admin Page:
+
+![](https://i.ibb.co/p0954FV/Screenshot-2023-01-23-105132.png)
+
+Admin can add, edit, delete and disbale/enable product from site.
