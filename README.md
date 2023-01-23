@@ -12,6 +12,8 @@ Live:https://adorama.vercel.app/
  - Products page which allows to buy Products
  - Add to cart page which shows products added in cart
  - Payment page 
+ - Sorting in Admin Page
+ - Filtering in Admin Page
  - Admin Dashboard which allows admin to add, edit, delete and disable/enable products. 
  
  ## Group Members
