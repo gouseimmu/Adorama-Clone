@@ -13,6 +13,15 @@ Live:https://adorama.vercel.app/
  - Add to cart page which shows products added in cart
  - Payment page 
  - Admin Dashboard which allows admin to add, edit, delete and disable/enable products. 
+ 
+ ## Group Members
+
+ - Shaik Gouse Mohiddin
+ - Sourav Kumar Sahu
+ - Nikhil Walwatkar
+ - Raj Kumar Sahu
+ - MD ALI MUJTABA
+ 
 
 
 ## Screenshots
