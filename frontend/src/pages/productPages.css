@@ -3,9 +3,30 @@
     grid-template-columns: repeat(3,1fr);
     justify-content: space-around;
     align-items: end;
+    gap:3rem
+
 }
 .product_cart{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: end;
+    padding: 0.9rem;
+    align-items: baseline;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    height: 400px;
+    /* max-width: 350px; */
+
+}
+.product_title{
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+           line-clamp: 2;
+   -webkit-box-orient: vertical;
+}
+.product_page_main{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    
 }

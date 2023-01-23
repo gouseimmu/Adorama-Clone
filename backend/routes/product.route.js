@@ -4,6 +4,7 @@ const productRoute=express.Router()
 
 productRoute.get("/",async(req,res)=>{
     const category=req.query.category;
+    
     try{
         if(category!=undefined&&typeof(category)=="string"){
             const post=await ProductModel.find({category});

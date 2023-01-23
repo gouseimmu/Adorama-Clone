@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { border, FormControl, FormLabel, Heading, Input, Select, Text } from "@chakra-ui/react";
 import { FaGreaterThan } from "react-icons/fa"
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 // import Navbar from "../Components/Navbar";
 import { Image } from '@chakra-ui/react';
 import { SearchIcon, StarIcon } from "@chakra-ui/icons";
@@ -12,8 +12,14 @@ import {useDispatch, useSelector} from "react-redux"
 import { Add_TO_CART } from "../Redux/cart/cart_actions";
 import { useToast } from "@chakra-ui/react"
 import "./productPages.css"
-
+import Sidebar from "../components/products_component/sidebar";
 const ProductPage = () => {
+    const location = useLocation();
+    const [getserchparams,setsearchParams]=useSearchParams()
+    const product_category=getserchparams.getAll("category")
+    const nan=useNavigate()
+
+
     const toast = useToast()
     const local_data=JSON.parse(localStorage.getItem("details")) || []
     console.log(local_data)
@@ -25,7 +31,7 @@ const ProductPage = () => {
     const [cart, setCart] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const Api = () => {
-        axios.get("https://joyous-robe-tick.cyclic.app/product").then((res) => {
+        axios.get("https://joyous-robe-tick.cyclic.app/product",{params:{"category":([...product_category])}}).then((res) => {
             console.log(res.data);
             setProduct(res.data);
             setFilteredProducts(res.data)
@@ -79,56 +85,11 @@ const ProductPage = () => {
                
             
            
-        //     let isPresent = false;
-        //     let userData = JSON.parse(localStorage.getItem("user"))
-        //     // alert("Item has been added")
-        //     let y = product.filter((el, index) => {
-        //         return el.id == id
-        // })
-        // console.log(y)
-
-        // true && cart.map((item) => {
-        //     if (item.id === y.id) isPresent = true
-        // })
-
-        // if (isPresent) {
-        //     alert("Item is already present in the cart");
-        //     return;
-        // }
-        // else {
-            // axios.post(`https://joyous-robe-tick.cyclic.app/cart`, {
-
-            //     ...y[0],
-            //     //  image:y[0].productImage_src,
-            //     //  title:y[0].trackEvent_2,
-            //     email: userData.email,
-            //     time: userData.lastSignInTime
-
-            // }).then((res) => {
-            //     console.log(res.data)
-
-            // })
-            // dispatch(Add_TO_CART(data))
-        // }
+       
+       
     }
     }
 
-    const handleSearch = (event) => {
-
-        setSearchTerm(event.target.value);
-        if (event.target.value === "") {
-            setProduct(filteredProducts)
-        }
-        else {
-            setProduct(
-                product.filter((el) =>
-                    el.trackEvent_2.toLowerCase().includes(event.target.value.toLowerCase())
-                )
-            );
-        }
-        // setFilteredProducts(
-
-    };
 
 
     const getCartData = () => {
@@ -138,21 +99,18 @@ const ProductPage = () => {
     useEffect(() => {
         Api();
         getCartData();
-    }, []);
-
+     
+    }, [location]);
+console.log("vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvhbbbbbbbbbbbbb",product)
     return (
     <>
     <div style={{paddingBottom:"130px" }}>
 
             <Navbar/>
     </div>
-        <div >
-            <div style={{
-                display: "flex", alignItems: "flex-start", justifyContent: "space-between",
-                // border: "1px solid red",
-                width: "100%", gap: "30px"
-            }}>
-<div className="sidebar" ><Heading>SideBar</Heading></div>
+        <div Style={"width:95%;margin:auto"}>
+            <div className="product_page_main">
+<div className="sidebar" ><Sidebar/></div>
 
                 <div className="main_content_product" >
                             {product.map((el, index) => (
@@ -161,7 +119,7 @@ const ProductPage = () => {
                                 <div className="product_cart"
                                     key={el.id}>
                                         
-                                    <div >
+                                    <div Style={"width:50%"}>
                                         <img
                                             style={{ paddingTop: "20px", width: "300px" }}
                                             src={el.image}
@@ -171,7 +129,7 @@ const ProductPage = () => {
                                     </div>
 
                                     <div>
-                                        <h3 style={{ color: "rgb(43, 105, 229)", cursor: "pointer", marginRight: "80px" }}>{el.title}{el.trackEvent_2}
+                                        <h3 className="product_title">{el.title}
                                             <Link to={`/products/${el.id}`}><h1>More details</h1></Link></h3>
 
 
@@ -216,14 +174,6 @@ const ProductPage = () => {
                                         </button>
                                        
                                         <br /><hr />
-                                        {/* <p>Ways to Save</p>
-                                        <div style={{ color: "rgb(43, 105, 229)", cursor: "pointer", }}>
-                                            <p >5% OFF+ Every Day with Adorama Edge</p>
-                                            <p>Credit Card</p>
-                                            <p>Sell or Trade your Gear</p>
-                                            <p>Save up to $800 with bundle</p>
-                                            <p>Get Reward Points</p>
-                                        </div> */}
                                     </div>
                                 </div>
 
