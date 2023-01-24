@@ -13,6 +13,7 @@ import { Add_TO_CART } from "../Redux/cart/cart_actions";
 import { useToast } from "@chakra-ui/react"
 import "./productPages.css"
 import Sidebar from "../components/products_component/sidebar";
+import Heroslider from "../components/Home_component/heroslider";
 const ProductPage = () => {
     const location = useLocation();
     const [getserchparams,setsearchParams]=useSearchParams()
@@ -31,7 +32,7 @@ const ProductPage = () => {
     const [cart, setCart] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const Api = () => {
-        axios.get("https://joyous-robe-tick.cyclic.app/product",{params:{"category":([...product_category])}}).then((res) => {
+        axios.get("https://joyous-robe-tick.cyclic.app/product/getproduct",{params:{"category":([...product_category])}}).then((res) => {
             console.log(res.data);
             setProduct(res.data);
             setFilteredProducts(res.data)
@@ -41,7 +42,13 @@ const ProductPage = () => {
     const handleCart = (id) => {
         console.log(id)
         if(local_data[0] == undefined){
-            alert("login first")
+            toast({
+                title: "Login First",
+                status: "warning",
+                duration: 2000,
+                isClosable: true,
+                position:"top"
+              });
             return 
         }
         else{
@@ -50,7 +57,14 @@ const ProductPage = () => {
             console.log(data)
                if(cart_state.cart_data[0]==undefined){
                 dispatch(Add_TO_CART(data))
-                alert("product added to cart")
+                toast({
+                    title: "Product  Added.",
+                
+                    status: "success",
+                    duration: 2000,
+                    isClosable: true,
+                    position:"top"
+                  });
                }
                else{
                 cart_state.cart_data.map(el=>{
@@ -58,9 +72,10 @@ const ProductPage = () => {
                         toast({
                             title: "Product Already Added.",
                         
-                            status: "success",
-                            duration: 5000,
+                            status: "warning",
+                            duration: 2000,
                             isClosable: true,
+                            position:"top"
                           });
 
                        same=true
@@ -74,8 +89,9 @@ const ProductPage = () => {
                         title: "Product Added.",
                     
                         status: "success",
-                        duration: 5000,
+                        duration: 2000,
                         isClosable: true,
+                        position:"top"
                       });
 
                 }
@@ -109,7 +125,13 @@ console.log("vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvhbbbbbbbbbbbbb",product)
             <Navbar/>
     </div>
         <div Style={"width:95%;margin:auto"}>
+            <br/>
+            
+            <Heroslider/>
+            <br/>
+            <br/>
             <div className="product_page_main">
+                
 <div className="sidebar" ><Sidebar/></div>
 
                 <div className="main_content_product" >
@@ -119,7 +141,7 @@ console.log("vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvhbbbbbbbbbbbbb",product)
                                 <div className="product_cart"
                                     key={el.id}>
                                         
-                                    <div Style={"width:50%"}>
+                                    <div Style={"width:40%"}>
                                         <img
                                             style={{ paddingTop: "20px", width: "300px" }}
                                             src={el.image}
@@ -129,22 +151,9 @@ console.log("vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvhbbbbbbbbbbbbb",product)
                                     </div>
 
                                     <div>
-                                        <h3 className="product_title">{el.title}
-                                            <Link to={`/products/${el.id}`}><h1>More details</h1></Link></h3>
-
-
-                                        <p style={{ marginRight: "80px" }}>
-                                            <div style={{ fontSize: "12px", display: "flex" }}><p>SKU:{el.product_sku_2}</p>   <p style={{ marginLeft: "14px" }}>MFR:{el.product_sku_4}{" "}</p></div>
-                                            <br />
-                                            {/* {el.review_stars} ({el.review_count}) */}
-        
-                                          
-                                            
-                                        </p>
-
-
-                                     
-                                    </div>
+                                        <h3 className="product_title">{el.title}</h3>
+                                            {/* <Link to={`/products/${el.id}`}><h1>More details</h1></Link></h3> */}
+                                    </div> 
                                     <div>
                                         <p>{el.pricea}</p>
 
@@ -157,11 +166,11 @@ console.log("vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvhbbbbbbbbbbbbb",product)
                                         <button 
                                         disabled={!el.available}
                                             style={{
-                                                backgroundColor: "rgb(228, 112, 70)",
+                                                backgroundColor: "#003F7F",
                                                 color: "white",
                                                 padding: "10px 20px",
                                                 fontSize: "20px",
-                                                border: "red",
+                                                // border: "red",
                                                 borderRadius: "5px",
                                                 cursor: "pointer",
                                                 width: "200px",

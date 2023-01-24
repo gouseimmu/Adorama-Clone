@@ -28,6 +28,26 @@ productRoute.get("/",async(req,res)=>{
 
     }
 })
+
+productRoute.get("/getproduct",async(req,res)=>{
+    let query=req.query
+    if(query.sort_data && query.order){
+        let query_data=({...query})
+        let sort_data=query.sort_data
+        let order=query.order
+        console.log(sort_data,order)
+        delete(query_data.sort_data)
+        delete(query_data.order)
+        let data=await ProductModel.find({...query_data}).sort([[sort_data,order]])
+        res.send(data)
+
+    }
+    else{
+        let data=await ProductModel.find({...query})
+        res.send(data)
+    }
+})
+
 productRoute.get("/search/:key", async (req, res) => {
     
     console.log(req.params.key)

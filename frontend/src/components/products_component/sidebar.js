@@ -1,4 +1,4 @@
-import { Checkbox, Text } from "@chakra-ui/react";
+import { background, Checkbox, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -24,9 +24,9 @@ setsearchParams(q)
 },[cat_querry])
     console.log(cat_querry)
     return (
-        <>
-        <Text>Catogary</Text>
-        <div>
+        <div >
+        <Text fontSize="2xl">Catogary</Text>
+        <div Style={"display:flex;flex-direction:column;align-items:start"}>
             
             <div>
             <Checkbox isChecked={(cat_querry.includes("COMPUTER"))?true:false} value="COMPUTER" onChange={(e)=>hendleChange(e)} >COMPUTER</Checkbox>
@@ -54,6 +54,19 @@ setsearchParams(q)
             </div>
         </div>
         <hr/>
-        </>
+        <br/>
+        <br/>
+        <div Style={"display:flex;flex-direction:column;align-items:start"} >
+    
+        <div>
+            <Checkbox isChecked={(cat_querry.includes("HOME_ELECTRONICS"))?true:false}  value="HOME_ELECTRONICS" onChange={(e)=>hendleChange(e)}  >Price:low to high</Checkbox>
+
+            </div>
+            <div>
+            <Checkbox isChecked={(cat_querry.includes("MUSICAL_INSTRUMENTS"))?true:false}  value="MUSICAL_INSTRUMENTS" onChange={(e)=>hendleChange(e)}  >Price:high to low</Checkbox>
+
+            </div>
+        </div>
+        </div>
     )
 }

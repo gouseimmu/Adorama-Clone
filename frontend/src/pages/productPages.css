@@ -13,7 +13,7 @@
     padding: 0.9rem;
     align-items: baseline;
     box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
-    height: 400px;
+    height: 320px;
     /* max-width: 350px; */
 
 }
@@ -24,9 +24,20 @@
    -webkit-line-clamp: 2; /* number of lines to show */
            line-clamp: 2;
    -webkit-box-orient: vertical;
+   text-align: start;
 }
 .product_page_main{
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 2fr 4fr;
     
+}
+@media screen and (max-width:1280px){
+    .main_content_product{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        justify-content: space-around;
+        align-items: end;
+        gap:3rem
+    
+    }
 }
