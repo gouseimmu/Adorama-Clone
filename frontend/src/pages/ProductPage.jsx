@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { border, FormControl, FormLabel, Heading, Input, Select, Text } from "@chakra-ui/react";
+import { border, FormControl, FormLabel, Heading, Hide, Input, Select, Show, Text } from "@chakra-ui/react";
 import { FaGreaterThan } from "react-icons/fa"
 import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 // import Navbar from "../Components/Navbar";
@@ -14,6 +14,7 @@ import { useToast } from "@chakra-ui/react"
 import "./productPages.css"
 import Sidebar from "../components/products_component/sidebar";
 import Heroslider from "../components/Home_component/heroslider";
+import Product_drower from "../components/products_component/drawer_productpage";
 const ProductPage = () => {
     const location = useLocation();
     const [getserchparams,setsearchParams]=useSearchParams()
@@ -117,7 +118,7 @@ const ProductPage = () => {
         getCartData();
      
     }, [location]);
-console.log("vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvhbbbbbbbbbbbbb",product)
+console.log(product)
     return (
     <>
     <div style={{paddingBottom:"130px" }}>
@@ -131,8 +132,16 @@ console.log("vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvhbbbbbbbbbbbbb",product)
             <br/>
             <br/>
             <div className="product_page_main">
-                
-<div className="sidebar" ><Sidebar/></div>
+            <Show breakpoint='(max-width: 960px)'>
+        <Product_drower/>
+    </Show>
+    <Hide breakpoint='(max-width: 960px)'>
+<div className="sidebar" >
+
+    <Sidebar/>
+   
+    </div>
+    </Hide>
 
                 <div className="main_content_product" >
                             {product.map((el, index) => (
