@@ -31,10 +31,31 @@
     grid-template-columns: 2fr 4fr;
     
 }
+.drover_content{
+    background-color: rgb(230, 230, 230);
+padding-left: 0.5rem;
+}
 @media screen and (max-width:1280px){
     .main_content_product{
         display: grid;
         grid-template-columns: repeat(2,1fr);
+        justify-content: space-around;
+        align-items: end;
+        gap:3rem
+    
+    }
+}
+@media screen and (max-width:960px){
+    .product_page_main{
+        display: block;
+        
+    }
+}
+
+@media screen and (max-width:560px){
+    .main_content_product{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
         justify-content: space-around;
         align-items: end;
         gap:3rem
