@@ -56,7 +56,9 @@ All products added in cart will be shown here.
 
 5. Payment Page:
 
-![](https://i.ibb.co/wB2ZRMm/Screenshot-2023-01-23-105054.png)
+![](https://i.ibb.co/1fcvsk6/pay.jpg)
+
+ 
 
 User can pay either using cod or online method.
 
